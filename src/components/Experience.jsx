@@ -10,31 +10,18 @@ import "react-vertical-timeline-component/style.min.css";
 import { styles } from "../styles";
 import { experiences } from "../constants";
 import { SectionWrapper } from "../hoc";
-import { textVariant, fadeIn } from "../utils/motion";
+import { textVariant } from "../utils/motion";
 
 const ExperienceCard = ({ experience }) => {
   return (
     <VerticalTimelineElement
       contentStyle={{
-        background: "#1d1836",
+        background: "#1a1430", // Darker purple background
         color: "#fff",
-        padding: "1.5rem",
-        boxShadow: "0 4px 6px rgba(0, 0, 0, 0.1)",
-        visibility: "visible",
-        // Add these properties for better large screen support
-        maxWidth: "600px", // Prevent content from being too wide
-        minHeight: "auto", // Allow natural height
       }}
-      contentArrowStyle={{ borderRight: "7px solid #1d1836" }}
+      contentArrowStyle={{ borderRight: "7px solid #232631" }}
       date={experience.date}
-      iconStyle={{ 
-        background: experience.iconBg,
-        // Ensure icon visibility on all screens
-        width: "60px",
-        height: "60px",
-        visibility: "visible",
-      }}
-      visible={true}
+      iconStyle={{ background: experience.iconBg }}
       icon={
         <div className='flex justify-center items-center w-full h-full'>
           <img
@@ -46,10 +33,11 @@ const ExperienceCard = ({ experience }) => {
       }
     >
       <div>
-        <h3 className='text-white text-[20px] sm:text-[24px] lg:text-[26px] font-bold'>
-          {experience.title}
-        </h3>
-        <p className='text-secondary text-[14px] sm:text-[16px] lg:text-[18px] font-semibold mt-1'>
+        <h3 className='text-white text-[24px] font-bold'>{experience.title}</h3>
+        <p
+          className='text-secondary text-[16px] font-semibold'
+          style={{ margin: 0 }}
+        >
           {experience.company_name}
         </p>
       </div>
@@ -58,7 +46,7 @@ const ExperienceCard = ({ experience }) => {
         {experience.points.map((point, index) => (
           <li
             key={`experience-point-${index}`}
-            className='text-white-100 text-[12px] sm:text-[14px] lg:text-[16px] pl-1 tracking-wider'
+            className='text-white-100 text-[14px] pl-1 tracking-wider'
           >
             {point}
           </li>
@@ -75,8 +63,16 @@ const Experience = () => {
     !exp.title.includes("Researcher") && !exp.title.includes("Internship")
   );
 
+  // Create section divider component
+  const SectionDivider = ({ title }) => (
+    <div className="w-full text-center py-8">
+      <h3 className="text-white text-[24px] font-bold mb-4">{title}</h3>
+      <div className="w-24 h-1 bg-gradient-to-r from-purple-500 to-pink-500 mx-auto"></div>
+    </div>
+  );
+
   return (
-    <div className="relative w-full min-h-screen overflow-visible">
+    <>
       <motion.div variants={textVariant()}>
         <p className={`${styles.sectionSubText} text-center`}>
           What I have done so far
@@ -86,76 +82,94 @@ const Experience = () => {
         </h2>
       </motion.div>
 
-      <div className='mt-20 flex flex-col gap-12 pb-20'>
-        {[
-          { title: "Research Experience", data: researchExperiences, delay: 0.1 },
-          { title: "Industrial Experience", data: industrialExperiences, delay: 0.2 },
-          { title: "Club Experience", data: clubExperiences, delay: 0.3 }
-        ].map((section) => (
-          <motion.div
-            key={section.title}
-            variants={fadeIn("up", "spring", section.delay, 0.75)}
-            className="w-full relative"
-          >
-            <h3 className="text-white text-[20px] sm:text-[24px] lg:text-[28px] font-bold text-center mb-10">
-              {section.title}
-            </h3>
-            <div className="relative w-full overflow-visible">
-              <VerticalTimeline
-                layout="2-columns"
-                animate={true}
-                className="vertical-timeline-custom-line"
+      <div className='mt-20 flex flex-col'>
+        <VerticalTimeline>
+          {/* Research Experience Section */}
+          {researchExperiences.length > 0 && (
+            <>
+              <VerticalTimelineElement
+                className="vertical-timeline-element--section"
+                contentStyle={{
+                  background: 'transparent',
+                  boxShadow: 'none',
+                  border: 'none',
+                }}
+                contentArrowStyle={{ display: 'none' }}
+                iconStyle={{
+                  background: 'linear-gradient(135deg, #667eea 0%, #764ba2 100%)',
+                  color: '#fff',
+                }}
+                icon={<div className="text-2xl">🔬</div>}
               >
-                {section.data.map((experience, index) => (
-                  <ExperienceCard key={index} experience={experience} />
-                ))}
-              </VerticalTimeline>
-            </div>
-          </motion.div>
-        ))}
-      </div>
+                <SectionDivider title="Research Experience" />
+              </VerticalTimelineElement>
+              {researchExperiences.map((experience, index) => (
+                <ExperienceCard
+                  key={`research-${index}`}
+                  experience={experience}
+                />
+              ))}
+            </>
+          )}
 
-      <style jsx>{`
-        /* Custom styles to fix large screen issues */
-        .vertical-timeline::before {
-          background: #232631 !important;
-        }
-        
-        .vertical-timeline-element {
-          visibility: visible !important;
-        }
-        
-        .vertical-timeline-element-content {
-          visibility: visible !important;
-          opacity: 1 !important;
-        }
-        
-        /* Ensure proper spacing on large screens */
-        @media (min-width: 1170px) {
-          .vertical-timeline-element {
-            margin: 4rem 0;
-          }
-          
-          .vertical-timeline-element-content {
-            margin-left: 0 !important;
-            width: calc(50% - 45px) !important;
-          }
-          
-          .vertical-timeline-element-date {
-            display: block !important;
-            visibility: visible !important;
-          }
-        }
-        
-        /* Fix for extra large screens */
-        @media (min-width: 1440px) {
-          .vertical-timeline {
-            max-width: 1200px;
-            margin: 0 auto;
-          }
-        }
-      `}</style>
-    </div>
+          {/* Industrial Experience Section */}
+          {industrialExperiences.length > 0 && (
+            <>
+              <VerticalTimelineElement
+                className="vertical-timeline-element--section"
+                contentStyle={{
+                  background: 'transparent',
+                  boxShadow: 'none',
+                  border: 'none',
+                }}
+                contentArrowStyle={{ display: 'none' }}
+                iconStyle={{
+                  background: 'linear-gradient(135deg, #f093fb 0%, #f5576c 100%)',
+                  color: '#fff',
+                }}
+                icon={<div className="text-2xl">🏢</div>}
+              >
+                <SectionDivider title="Industrial Experience" />
+              </VerticalTimelineElement>
+              {industrialExperiences.map((experience, index) => (
+                <ExperienceCard
+                  key={`industrial-${index}`}
+                  experience={experience}
+                />
+              ))}
+            </>
+          )}
+
+          {/* Club Experience Section */}
+          {clubExperiences.length > 0 && (
+            <>
+              <VerticalTimelineElement
+                className="vertical-timeline-element--section"
+                contentStyle={{
+                  background: 'transparent',
+                  boxShadow: 'none',
+                  border: 'none',
+                }}
+                contentArrowStyle={{ display: 'none' }}
+                iconStyle={{
+                  background: 'linear-gradient(135deg, #4facfe 0%, #00f2fe 100%)',
+                  color: '#fff',
+                }}
+                icon={<div className="text-2xl">🎯</div>}
+              >
+                <SectionDivider title="Club Experience" />
+              </VerticalTimelineElement>
+              {clubExperiences.map((experience, index) => (
+                <ExperienceCard
+                  key={`club-${index}`}
+                  experience={experience}
+                />
+              ))}
+            </>
+          )}
+        </VerticalTimeline>
+      </div>
+    </>
   );
 };
 
