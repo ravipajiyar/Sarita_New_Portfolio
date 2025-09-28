@@ -21,11 +21,12 @@ const ExperienceCard = ({ experience }) => {
         padding: "1.5rem",
         boxShadow: "0 4px 6px rgba(0, 0, 0, 0.1)",
         visibility: "visible",
+        maxWidth: "100%",
+        margin: "0 auto"
       }}
       contentArrowStyle={{ borderRight: "7px solid #1d1836" }}
       date={experience.date}
       iconStyle={{ background: experience.iconBg }}
-      visible={true}
       icon={
         <div className='flex justify-center items-center w-full h-full'>
           <img
@@ -36,23 +37,23 @@ const ExperienceCard = ({ experience }) => {
         </div>
       }
     >
-      <div>
+      <div className="relative">
         <h3 className='text-white text-[20px] sm:text-[24px] font-bold'>{experience.title}</h3>
         <p className='text-secondary text-[14px] sm:text-[16px] font-semibold mt-1'>
           {experience.company_name}
         </p>
-      </div>
 
-      <ul className='mt-5 list-disc ml-5 space-y-2'>
-        {experience.points.map((point, index) => (
-          <li
-            key={`experience-point-${index}`}
-            className='text-white-100 text-[12px] sm:text-[14px] pl-1 tracking-wider'
-          >
-            {point}
-          </li>
-        ))}
-      </ul>
+        <ul className='mt-5 list-disc ml-5 space-y-2'>
+          {experience.points.map((point, index) => (
+            <li
+              key={`experience-point-${index}`}
+              className='text-white-100 text-[12px] sm:text-[14px] pl-1 tracking-wider'
+            >
+              {point}
+            </li>
+          ))}
+        </ul>
+      </div>
     </VerticalTimelineElement>
   );
 };

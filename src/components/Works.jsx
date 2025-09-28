@@ -149,7 +149,7 @@ const Works = () => {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
-            className="fixed inset-0 z-50 flex items-start md:items-center justify-center bg-black/70 backdrop-blur-sm p-4 overflow-y-auto"
+            className="modal-backdrop"
             onClick={(e) => {
               if (e.target === e.currentTarget) {
                 setOpenProject(null);
@@ -160,7 +160,7 @@ const Works = () => {
               initial={{ scale: 0.95, opacity: 0, y: 20 }}
               animate={{ scale: 1, opacity: 1, y: 0 }}
               exit={{ scale: 0.95, opacity: 0, y: 20 }}
-              className="bg-gradient-to-br from-indigo-900 via-purple-900 to-indigo-700 rounded-2xl w-full max-w-[95%] md:max-w-[85%] lg:max-w-[1000px] max-h-[90vh] md:max-h-[85vh] overflow-y-auto relative my-4 md:my-0"
+              className="modal-content modal-scroll"
               onClick={(e) => e.stopPropagation()}
             >
               <button

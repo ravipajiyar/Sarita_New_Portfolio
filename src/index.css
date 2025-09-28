@@ -225,6 +225,113 @@
   background: rgba(145, 94, 255, 0.7);
 }
 
+/* Responsive timeline improvements */
+.vertical-timeline {
+  width: 100% !important;
+  max-width: 1200px !important;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+.vertical-timeline::before {
+  background: #232631;
+}
+
+.vertical-timeline-element {
+  margin: 2rem 0;
+}
+
+.vertical-timeline-element-content {
+  background-color: #1d1836;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  padding: 1.5rem;
+  position: relative;
+}
+
+@media screen and (min-width: 1170px) {
+  .vertical-timeline-element-content {
+    margin-left: 0;
+    padding: 1.5rem;
+    width: 44%;
+  }
+
+  .vertical-timeline--two-columns .vertical-timeline-element-content {
+    width: 44%;
+  }
+
+  .vertical-timeline-element-content.is-hidden {
+    visibility: hidden;
+  }
+}
+
+/* Modal improvements */
+.modal-backdrop {
+  position: fixed;
+  inset: 0;
+  background-color: rgba(0, 0, 0, 0.75);
+  backdrop-filter: blur(8px);
+  z-index: 50;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem;
+}
+
+.modal-content {
+  background: linear-gradient(135deg, #1a1a2e 0%, #262645 100%);
+  border-radius: 1rem;
+  width: 95%;
+  max-width: 1200px;
+  max-height: 90vh;
+  overflow-y: auto;
+  position: relative;
+  margin: 2rem auto;
+}
+
+.modal-close-btn {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  width: 2.5rem;
+  height: 2.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 50%;
+  transition: all 0.2s ease;
+  z-index: 51;
+  cursor: pointer;
+}
+
+.modal-close-btn:hover {
+  background: rgba(255, 255, 255, 0.2);
+}
+
+.modal-close-btn span {
+  font-size: 1.5rem;
+  line-height: 1;
+  color: white;
+}
+
+@media (min-width: 768px) {
+  .modal-content {
+    width: 85%;
+  }
+}
+
+@media (min-width: 1024px) {
+  .modal-content {
+    width: 75%;
+  }
+}
+
+/* Prevent scroll when modal is open */
+body.modal-open {
+  overflow: hidden;
+  padding-right: 15px; /* Prevent layout shift */
+}
+
 /* Responsive timeline fixes */
 .vertical-timeline-custom-line::before {
   background: #232631;
