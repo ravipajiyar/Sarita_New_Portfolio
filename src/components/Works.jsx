@@ -164,54 +164,54 @@ const Works = () => {
 
       {openProject && (
         <div 
-          className="fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-75 backdrop-blur-sm p-4"
+          className="fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-75 backdrop-blur-sm p-4 sm:p-8"
           onClick={() => setOpenProject(null)}
         >
           <div 
-            className="bg-gradient-to-br from-[#1a0f2e] via-[#2a1b3d] to-[#1a0f2e] rounded-2xl p-6 sm:p-8 w-full max-w-4xl xl:max-w-5xl relative text-white shadow-2xl max-h-[95vh] overflow-y-auto"
+            className="bg-gradient-to-br from-[#1a0f2e] via-[#2a1b3d] to-[#1a0f2e] rounded-2xl p-6 sm:p-8 w-full max-w-3xl xl:max-w-4xl relative text-white shadow-2xl max-h-[85vh] overflow-hidden"
             onClick={(e) => e.stopPropagation()}
           >
             <button
-              className="absolute top-3 right-3 sm:top-4 sm:right-4 text-2xl sm:text-3xl font-bold cursor-pointer text-gray-300 hover:text-gray-100 z-10 w-8 h-8 sm:w-10 sm:h-10 flex items-center justify-center rounded-full bg-black bg-opacity-50 hover:bg-opacity-70 transition-all"
+              className="absolute top-4 right-4 text-3xl font-bold cursor-pointer text-gray-300 hover:text-white z-20 w-10 h-10 flex items-center justify-center rounded-full bg-gray-900 bg-opacity-80 hover:bg-opacity-100 transition-all"
               onClick={() => setOpenProject(null)}
             >
               &times;
             </button>
             
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 lg:gap-8 mt-4">
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 lg:gap-8 mt-12 h-full overflow-y-auto pr-2">
               <div className="space-y-4">
                 <img
                   src={openProject.image}
                   alt={openProject.name}
-                  className="w-full h-[250px] sm:h-[300px] lg:h-[400px] object-cover rounded-lg shadow-xl"
+                  className="w-full h-[200px] sm:h-[250px] lg:h-[300px] object-cover rounded-lg shadow-xl"
                 />
                 
-                <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4">
+                <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-3">
                   <button
-                    className={`flex items-center gap-2 px-4 py-2 rounded-lg transition-colors ${
+                    className={`flex items-center gap-2 px-3 py-2 rounded-lg transition-colors text-sm ${
                       liked ? "bg-red-700 hover:bg-red-600" : "bg-gray-700 hover:bg-gray-600"
                     }`}
                     onClick={() => setLiked(!liked)}
                   >
                     {liked ? (
-                      <FaHeart className="w-5 h-5 text-red-300" />
+                      <FaHeart className="w-4 h-4 text-red-300" />
                     ) : (
-                      <FaRegHeart className="w-5 h-5 text-gray-300" />
+                      <FaRegHeart className="w-4 h-4 text-gray-300" />
                     )}
                     {liked ? "Liked" : "Like"}
                   </button>
 
-                  <div className="flex flex-col sm:flex-row gap-2 sm:gap-4 w-full sm:w-auto">
+                  <div className="flex flex-col sm:flex-row gap-2 w-full sm:w-auto">
                     <a
                       href={openProject.report}
                       download
-                      className="bg-blue-700 hover:bg-blue-600 px-4 py-2 rounded-lg text-white shadow-lg transition-colors text-center"
+                      className="bg-blue-700 hover:bg-blue-600 px-3 py-2 rounded-lg text-white shadow-lg transition-colors text-center text-sm"
                     >
                       Download Report
                     </a>
                     <button
                       onClick={() => window.open(openProject.source_code_link, "_blank")}
-                      className="bg-green-700 hover:bg-green-600 px-4 py-2 rounded-lg text-white shadow-lg transition-colors"
+                      className="bg-green-700 hover:bg-green-600 px-3 py-2 rounded-lg text-white shadow-lg transition-colors text-sm"
                     >
                       View on GitHub
                     </button>
@@ -219,20 +219,20 @@ const Works = () => {
                 </div>
               </div>
 
-              <div className="space-y-6">
+              <div className="space-y-4">
                 <div>
-                  <h3 className="text-2xl sm:text-3xl font-bold mb-3">{openProject.name}</h3>
-                  <p className="text-gray-300 text-base sm:text-lg leading-relaxed mb-4">
+                  <h3 className="text-xl sm:text-2xl font-bold mb-2">{openProject.name}</h3>
+                  <p className="text-gray-300 text-sm sm:text-base leading-relaxed mb-3">
                     {openProject.description}
                   </p>
                 </div>
 
                 <div className="space-y-2">
-                  <h4 className="text-lg sm:text-xl font-bold mb-3">Key Features & Highlights</h4>
-                  <ul className="space-y-2">
+                  <h4 className="text-base sm:text-lg font-bold mb-2">Key Features & Highlights</h4>
+                  <ul className="space-y-1">
                     {projectHighlights[openProject.name]?.map((highlight, index) => (
-                      <li key={index} className="flex items-start gap-2 text-gray-300 text-sm sm:text-base">
-                        <span className="text-green-400 mt-1">•</span>
+                      <li key={index} className="flex items-start gap-2 text-gray-300 text-xs sm:text-sm">
+                        <span className="text-green-400 mt-1 text-xs">•</span>
                         {highlight}
                       </li>
                     ))}
@@ -240,7 +240,7 @@ const Works = () => {
                 </div>
 
                 <div className="space-y-2">
-                  <h4 className="text-base sm:text-lg font-semibold">Rate this project</h4>
+                  <h4 className="text-sm sm:text-base font-semibold">Rate this project</h4>
                   <div className="flex items-center gap-1">
                     {[1, 2, 3, 4, 5].map((star) => (
                       <div
@@ -249,20 +249,20 @@ const Works = () => {
                         className="cursor-pointer transform hover:scale-110 transition-transform"
                       >
                         {star <= rating ? (
-                          <FaStar className="w-6 h-6 sm:w-8 sm:h-8 text-yellow-400" />
+                          <FaStar className="w-5 h-5 sm:w-6 sm:h-6 text-yellow-400" />
                         ) : (
-                          <FaRegStar className="w-6 h-6 sm:w-8 sm:h-8 text-gray-400" />
+                          <FaRegStar className="w-5 h-5 sm:w-6 sm:h-6 text-gray-400" />
                         )}
                       </div>
                     ))}
                   </div>
                 </div>
 
-                <div className="flex flex-wrap gap-2 mt-4">
+                <div className="flex flex-wrap gap-2">
                   {openProject.tags.map((tag) => (
                     <span
                       key={tag.name}
-                      className="px-3 py-1 bg-gray-800 rounded-full text-xs sm:text-sm"
+                      className="px-2 py-1 bg-gray-800 rounded-full text-xs"
                     >
                       #{tag.name}
                     </span>
