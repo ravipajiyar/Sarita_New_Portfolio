@@ -165,10 +165,10 @@ const Works = () => {
             >
               <button
                 onClick={() => setOpenProject(null)}
-                className="absolute top-4 right-4 z-50 w-10 h-10 flex items-center justify-center rounded-full bg-white/10 hover:bg-white/20 transition-colors duration-200"
+                className="modal-close-btn"
                 aria-label="Close modal"
               >
-                <span className="text-3xl text-white leading-none">&times;</span>
+                <span>&times;</span>
               </button>
 
               <div className="p-6 md:p-8">

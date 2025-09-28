@@ -230,6 +230,17 @@
   background: #232631;
 }
 
+@media only screen and (min-width: 1170px) {
+  .vertical-timeline {
+    width: 90%;
+    max-width: 1200px;
+  }
+  
+  .vertical-timeline-element-content {
+    width: 44%;
+  }
+}
+
 @media only screen and (max-width: 1169px) {
   .vertical-timeline-custom-line::before {
     left: 18px;
@@ -347,6 +358,32 @@
 .modal-open {
   overflow: hidden;
   padding-right: 6px; /* Compensate for scrollbar disappearance */
+}
+
+/* Modal close button fixes */
+.modal-close-btn {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  width: 2.5rem;
+  height: 2.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 50%;
+  transition: all 0.2s ease;
+  z-index: 50;
+}
+
+.modal-close-btn:hover {
+  background: rgba(255, 255, 255, 0.2);
+}
+
+.modal-close-btn span {
+  font-size: 1.5rem;
+  line-height: 1;
+  color: white;
 }
 
 /* Image optimization */
