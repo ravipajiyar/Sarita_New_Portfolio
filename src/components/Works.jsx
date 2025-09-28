@@ -83,8 +83,17 @@ const Works = () => {
       }
     };
 
-    window.addEventListener('keydown', handleKeyDown);
-    return () => window.removeEventListener('keydown', handleKeyDown);
+    if (openProject) {
+      document.body.style.overflow = 'hidden';
+      window.addEventListener('keydown', handleKeyDown);
+    } else {
+      document.body.style.overflow = 'unset';
+    }
+
+    return () => {
+      document.body.style.overflow = 'unset';
+      window.removeEventListener('keydown', handleKeyDown);
+    };
   }, [openProject]);
 
   return (
@@ -134,106 +143,111 @@ const Works = () => {
         </motion.div>
       )}
 
-      {openProject && (
-        <motion.div 
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          exit={{ opacity: 0 }}
-          className="fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-50 backdrop-blur-sm p-4 overflow-y-auto"
-          onClick={(e) => {
-            if (e.target === e.currentTarget) {
-              setOpenProject(null);
-            }
-          }}
-        >
-          <motion.div
-            initial={{ scale: 0.95, opacity: 0 }}
-            animate={{ scale: 1, opacity: 1 }}
-            exit={{ scale: 0.95, opacity: 0 }}
-            className="bg-gradient-to-br from-indigo-900 via-purple-900 to-indigo-700 rounded-2xl w-full max-w-[90%] lg:max-w-[900px] max-h-[85vh] overflow-y-auto relative"
-            onClick={(e) => e.stopPropagation()}
+      <AnimatePresence>
+        {openProject && (
+          <motion.div 
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            className="fixed inset-0 z-50 flex items-start md:items-center justify-center bg-black/70 backdrop-blur-sm p-4 overflow-y-auto"
+            onClick={(e) => {
+              if (e.target === e.currentTarget) {
+                setOpenProject(null);
+              }
+            }}
           >
-            {/* Close button with improved positioning and visibility */}
-            <button
-              onClick={() => setOpenProject(null)}
-              className="absolute top-4 right-4 z-50 w-8 h-8 flex items-center justify-center rounded-full bg-white/10 hover:bg-white/20 transition-colors duration-200"
-              aria-label="Close modal"
+            <motion.div
+              initial={{ scale: 0.95, opacity: 0, y: 20 }}
+              animate={{ scale: 1, opacity: 1, y: 0 }}
+              exit={{ scale: 0.95, opacity: 0, y: 20 }}
+              className="bg-gradient-to-br from-indigo-900 via-purple-900 to-indigo-700 rounded-2xl w-full max-w-[95%] md:max-w-[85%] lg:max-w-[1000px] max-h-[90vh] md:max-h-[85vh] overflow-y-auto relative my-4 md:my-0"
+              onClick={(e) => e.stopPropagation()}
             >
-              <span className="text-2xl text-white">&times;</span>
-            </button>
+              <button
+                onClick={() => setOpenProject(null)}
+                className="absolute top-4 right-4 z-50 w-10 h-10 flex items-center justify-center rounded-full bg-white/10 hover:bg-white/20 transition-colors duration-200"
+                aria-label="Close modal"
+              >
+                <span className="text-3xl text-white leading-none">&times;</span>
+              </button>
 
-            <div className="p-6 sm:p-8">
-              <OptimizedImage
-                src={openProject.image}
-                alt={openProject.name}
-                className="w-full h-48 sm:h-64 object-cover rounded-lg"
-              />
-
-              <div className="space-y-6 mt-6">
-                <h3 className="text-2xl sm:text-3xl font-bold text-white">{openProject.name}</h3>
-                <p className="text-gray-300 text-base sm:text-lg">{openProject.description}</p>
-
-                <div className="flex flex-wrap gap-4">
-                  <button
-                    className={`flex items-center gap-2 px-4 py-2 rounded transition-colors duration-200 ${
-                      liked ? "bg-red-600 hover:bg-red-700" : "bg-gray-600 hover:bg-gray-700"
-                    }`}
-                    onClick={() => setLiked(!liked)}
-                  >
-                    {liked ? (
-                      <FaHeart className="w-5 h-5" />
-                    ) : (
-                      <FaRegHeart className="w-5 h-5" />
-                    )}
-                    {liked ? "Liked" : "Like"}
-                  </button>
-
-                  <a
-                    href={openProject.report}
-                    download
-                    className="bg-blue-600 hover:bg-blue-700 px-4 py-2 rounded text-white transition-colors duration-200"
-                  >
-                    Download Report
-                  </a>
-
-                  <button
-                    onClick={() => window.open(openProject.source_code_link, "_blank")}
-                    className="bg-green-600 hover:bg-green-700 px-4 py-2 rounded text-white transition-colors duration-200"
-                  >
-                    View on GitHub
-                  </button>
+              <div className="p-6 md:p-8">
+                <div className="aspect-w-16 aspect-h-9 mb-6 md:mb-8">
+                  <OptimizedImage
+                    src={openProject.image}
+                    alt={openProject.name}
+                    className="w-full h-full object-cover rounded-lg"
+                  />
                 </div>
 
-                <div className="flex items-center gap-1">
-                  {[1, 2, 3, 4, 5].map((star) => (
+                <div className="space-y-6">
+                  <div>
+                    <h3 className="text-2xl md:text-3xl lg:text-4xl font-bold text-white mb-4">{openProject.name}</h3>
+                    <p className="text-gray-300 text-base md:text-lg">{openProject.description}</p>
+                  </div>
+
+                  <div className="flex flex-wrap gap-4">
                     <button
-                      key={star}
-                      onClick={() => setRating(star)}
-                      className="focus:outline-none transition-transform hover:scale-110"
+                      className={`flex items-center gap-2 px-4 py-2 rounded transition-colors duration-200 ${
+                        liked ? "bg-red-600 hover:bg-red-700" : "bg-gray-600 hover:bg-gray-700"
+                      }`}
+                      onClick={() => setLiked(!liked)}
                     >
-                      {star <= rating ? (
-                        <FaStar className="w-6 h-6 text-yellow-400" />
+                      {liked ? (
+                        <FaHeart className="w-5 h-5" />
                       ) : (
-                        <FaRegStar className="w-6 h-6 text-gray-300" />
+                        <FaRegHeart className="w-5 h-5" />
                       )}
+                      {liked ? "Liked" : "Like"}
                     </button>
-                  ))}
-                </div>
 
-                <div className="space-y-3">
-                  <h4 className="font-bold text-xl text-white">Project Highlights</h4>
-                  <ul className="list-disc pl-5 text-gray-300 space-y-2">
-                    <li>Implemented advanced AutoCAD designs for precision.</li>
-                    <li>Optimized transportation systems for reduced congestion.</li>
-                    <li>Developed sustainable hydropower solutions.</li>
-                    <li>Integrated innovative methodologies to enhance efficiency.</li>
-                  </ul>
+                    <a
+                      href={openProject.report}
+                      download
+                      className="bg-blue-600 hover:bg-blue-700 px-4 py-2 rounded text-white transition-colors duration-200"
+                    >
+                      Download Report
+                    </a>
+
+                    <button
+                      onClick={() => window.open(openProject.source_code_link, "_blank")}
+                      className="bg-green-600 hover:bg-green-700 px-4 py-2 rounded text-white transition-colors duration-200"
+                    >
+                      View on GitHub
+                    </button>
+                  </div>
+
+                  <div className="flex items-center gap-2">
+                    {[1, 2, 3, 4, 5].map((star) => (
+                      <button
+                        key={star}
+                        onClick={() => setRating(star)}
+                        className="focus:outline-none transition-transform hover:scale-110"
+                      >
+                        {star <= rating ? (
+                          <FaStar className="w-6 h-6 md:w-8 md:h-8 text-yellow-400" />
+                        ) : (
+                          <FaRegStar className="w-6 h-6 md:w-8 md:h-8 text-gray-300" />
+                        )}
+                      </button>
+                    ))}
+                  </div>
+
+                  <div className="space-y-4">
+                    <h4 className="font-bold text-xl md:text-2xl text-white">Project Highlights</h4>
+                    <ul className="list-disc pl-5 text-gray-300 space-y-2 text-base md:text-lg">
+                      <li>Implemented advanced AutoCAD designs for precision.</li>
+                      <li>Optimized transportation systems for reduced congestion.</li>
+                      <li>Developed sustainable hydropower solutions.</li>
+                      <li>Integrated innovative methodologies to enhance efficiency.</li>
+                    </ul>
+                  </div>
                 </div>
               </div>
-            </div>
+            </motion.div>
           </motion.div>
-        </motion.div>
-      )}
+        )}
+      </AnimatePresence>
     </>
   );
 };

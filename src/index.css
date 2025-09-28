@@ -275,3 +275,88 @@
     min-width: 44px;
   }
 }
+
+/* Aspect ratio container for project images */
+.aspect-w-16 {
+  position: relative;
+  padding-bottom: 56.25%; /* 16:9 Aspect Ratio */
+}
+
+.aspect-w-16 > * {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+}
+
+/* Modal improvements */
+.modal-backdrop {
+  position: fixed;
+  inset: 0;
+  background-color: rgba(0, 0, 0, 0.7);
+  backdrop-filter: blur(8px);
+  z-index: 50;
+  overflow-y: auto;
+  overscroll-behavior: contain;
+}
+
+.modal-content {
+  margin: 2rem auto;
+  width: 95%;
+  max-width: 1200px;
+  border-radius: 1rem;
+  background: linear-gradient(135deg, #1a1a2e 0%, #262645 100%);
+  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+}
+
+@media (min-width: 768px) {
+  .modal-content {
+    width: 85%;
+  }
+}
+
+@media (min-width: 1024px) {
+  .modal-content {
+    width: 75%;
+  }
+}
+
+/* Improved scrollbar for modal */
+.modal-scroll::-webkit-scrollbar {
+  width: 6px;
+}
+
+.modal-scroll::-webkit-scrollbar-track {
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 10px;
+}
+
+.modal-scroll::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 10px;
+}
+
+.modal-scroll::-webkit-scrollbar-thumb:hover {
+  background: rgba(255, 255, 255, 0.3);
+}
+
+/* Prevent body scroll when modal is open */
+.modal-open {
+  overflow: hidden;
+  padding-right: 6px; /* Compensate for scrollbar disappearance */
+}
+
+/* Image optimization */
+.optimized-image {
+  object-fit: cover;
+  width: 100%;
+  height: 100%;
+  transition: transform 0.3s ease;
+}
+
+.optimized-image:hover {
+  transform: scale(1.02);
+}
