@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import Tilt from "react-tilt";
 import { motion, AnimatePresence } from "framer-motion";
 import { FaGithub, FaHeart, FaRegHeart, FaStar, FaRegStar } from "react-icons/fa";
@@ -76,6 +76,17 @@ const Works = () => {
 
   const visibleProjects = showAll ? projects : projects.slice(0, 3);
 
+  useEffect(() => {
+    const handleKeyDown = (e) => {
+      if (e.key === 'Escape' && openProject) {
+        setOpenProject(null);
+      }
+    };
+
+    window.addEventListener('keydown', handleKeyDown);
+    return () => window.removeEventListener('keydown', handleKeyDown);
+  }, [openProject]);
+
   return (
     <>
       <motion.div variants={textVariant()}>
@@ -128,38 +139,44 @@ const Works = () => {
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           exit={{ opacity: 0 }}
-          className="fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-50 backdrop-blur px-4 py-6 overflow-y-auto"
-          onClick={() => setOpenProject(null)}
+          className="fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-50 backdrop-blur-sm p-4 overflow-y-auto"
+          onClick={(e) => {
+            if (e.target === e.currentTarget) {
+              setOpenProject(null);
+            }
+          }}
         >
           <motion.div
-            initial={{ scale: 0.9, opacity: 0 }}
+            initial={{ scale: 0.95, opacity: 0 }}
             animate={{ scale: 1, opacity: 1 }}
-            exit={{ scale: 0.9, opacity: 0 }}
-            className="bg-gradient-to-br from-indigo-900 via-purple-900 to-indigo-700 rounded-2xl p-6 sm:p-8 w-full max-w-4xl max-h-[90vh] overflow-y-auto relative"
+            exit={{ scale: 0.95, opacity: 0 }}
+            className="bg-gradient-to-br from-indigo-900 via-purple-900 to-indigo-700 rounded-2xl w-full max-w-[90%] lg:max-w-[900px] max-h-[85vh] overflow-y-auto relative"
             onClick={(e) => e.stopPropagation()}
           >
+            {/* Close button with improved positioning and visibility */}
             <button
-              className="absolute top-4 right-4 text-2xl font-bold cursor-pointer text-gray-300 hover:text-gray-100 z-10"
               onClick={() => setOpenProject(null)}
+              className="absolute top-4 right-4 z-50 w-8 h-8 flex items-center justify-center rounded-full bg-white/10 hover:bg-white/20 transition-colors duration-200"
+              aria-label="Close modal"
             >
-              &times;
+              <span className="text-2xl text-white">&times;</span>
             </button>
 
-            <div className="space-y-6">
+            <div className="p-6 sm:p-8">
               <OptimizedImage
                 src={openProject.image}
                 alt={openProject.name}
                 className="w-full h-48 sm:h-64 object-cover rounded-lg"
               />
 
-              <div className="space-y-4">
-                <h3 className="text-2xl font-bold text-white">{openProject.name}</h3>
-                <p className="text-gray-300">{openProject.description}</p>
+              <div className="space-y-6 mt-6">
+                <h3 className="text-2xl sm:text-3xl font-bold text-white">{openProject.name}</h3>
+                <p className="text-gray-300 text-base sm:text-lg">{openProject.description}</p>
 
                 <div className="flex flex-wrap gap-4">
                   <button
-                    className={`flex items-center gap-2 px-4 py-2 rounded ${
-                      liked ? "bg-red-600 hover:bg-red-500" : "bg-gray-600 hover:bg-gray-500"
+                    className={`flex items-center gap-2 px-4 py-2 rounded transition-colors duration-200 ${
+                      liked ? "bg-red-600 hover:bg-red-700" : "bg-gray-600 hover:bg-gray-700"
                     }`}
                     onClick={() => setLiked(!liked)}
                   >
@@ -174,14 +191,14 @@ const Works = () => {
                   <a
                     href={openProject.report}
                     download
-                    className="bg-blue-600 hover:bg-blue-500 px-4 py-2 rounded text-white"
+                    className="bg-blue-600 hover:bg-blue-700 px-4 py-2 rounded text-white transition-colors duration-200"
                   >
                     Download Report
                   </a>
 
                   <button
                     onClick={() => window.open(openProject.source_code_link, "_blank")}
-                    className="bg-green-600 hover:bg-green-500 px-4 py-2 rounded text-white"
+                    className="bg-green-600 hover:bg-green-700 px-4 py-2 rounded text-white transition-colors duration-200"
                   >
                     View on GitHub
                   </button>
@@ -192,7 +209,7 @@ const Works = () => {
                     <button
                       key={star}
                       onClick={() => setRating(star)}
-                      className="focus:outline-none"
+                      className="focus:outline-none transition-transform hover:scale-110"
                     >
                       {star <= rating ? (
                         <FaStar className="w-6 h-6 text-yellow-400" />
@@ -203,9 +220,9 @@ const Works = () => {
                   ))}
                 </div>
 
-                <div className="space-y-2">
-                  <h4 className="font-bold text-lg text-white">Project Highlights</h4>
-                  <ul className="list-disc pl-5 text-gray-300 space-y-1">
+                <div className="space-y-3">
+                  <h4 className="font-bold text-xl text-white">Project Highlights</h4>
+                  <ul className="list-disc pl-5 text-gray-300 space-y-2">
                     <li>Implemented advanced AutoCAD designs for precision.</li>
                     <li>Optimized transportation systems for reduced congestion.</li>
                     <li>Developed sustainable hydropower solutions.</li>

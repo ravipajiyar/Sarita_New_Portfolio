@@ -18,12 +18,14 @@ const ExperienceCard = ({ experience }) => {
       contentStyle={{
         background: "#1d1836",
         color: "#fff",
-        padding: "1rem",
+        padding: "1.5rem",
         boxShadow: "0 4px 6px rgba(0, 0, 0, 0.1)",
+        visibility: "visible",
       }}
       contentArrowStyle={{ borderRight: "7px solid #1d1836" }}
       date={experience.date}
       iconStyle={{ background: experience.iconBg }}
+      visible={true}
       icon={
         <div className='flex justify-center items-center w-full h-full'>
           <img
@@ -63,7 +65,7 @@ const Experience = () => {
   );
 
   return (
-    <div className="relative w-full overflow-hidden">
+    <div className="relative w-full">
       <motion.div variants={textVariant()}>
         <p className={`${styles.sectionSubText} text-center`}>
           What I have done so far
@@ -73,22 +75,25 @@ const Experience = () => {
         </h2>
       </motion.div>
 
-      <div className='mt-20 flex flex-col'>
-        {/* Experience Sections */}
+      <div className='mt-20 flex flex-col gap-12'>
         {[
           { title: "Research Experience", data: researchExperiences, delay: 0.1 },
           { title: "Industrial Experience", data: industrialExperiences, delay: 0.2 },
           { title: "Club Experience", data: clubExperiences, delay: 0.3 }
-        ].map((section, idx) => (
+        ].map((section) => (
           <motion.div
             key={section.title}
             variants={fadeIn("up", "spring", section.delay, 0.75)}
-            className="mb-10 px-4 sm:px-0"
+            className="w-full"
           >
             <h3 className="text-white text-[20px] sm:text-[24px] font-bold text-center mb-10">
               {section.title}
             </h3>
-            <VerticalTimeline className="vertical-timeline-custom-line">
+            <VerticalTimeline
+              layout="2-columns"
+              animate={true}
+              className="vertical-timeline-custom-line before:bg-[#232631]"
+            >
               {section.data.map((experience, index) => (
                 <ExperienceCard key={index} experience={experience} />
               ))}
