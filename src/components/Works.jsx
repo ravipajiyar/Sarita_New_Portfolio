@@ -6,6 +6,7 @@ import { styles } from "../styles";
 import { SectionWrapper } from "../hoc";
 import { projects } from "../constants";
 import { fadeIn, textVariant } from "../utils/motion";
+import OptimizedImage from "./OptimizedImage";
 
 const ProjectCard = ({
   index,
@@ -33,9 +34,9 @@ const ProjectCard = ({
       className="bg-tertiary p-5 rounded-2xl sm:w-[360px] w-full"
     >
       <div className="relative w-full h-[230px]">
-        <img
+        <OptimizedImage
           src={image}
-          alt="project_image"
+          alt={name}
           className="w-full h-full object-cover rounded-2xl"
         />
         <div className="absolute inset-0 flex justify-end m-3 card-img_hover">

@@ -37,6 +37,30 @@ import tesla from "./company/tesla.png";
 import carrent from "./carrent.png";
 import jobit from "./jobit.png";
 import tripguide from "./tripguide.png";
+import hult from  "./hult.png";
+import asce from "./asce.png";
+import kucec from "./kucec.png";
+import sourcecad from "./sourcecad.png";
+import datacamp from "./datacamplogo.png";
+import toda from "./toda.png";
+import kugic from "./kugic.png";
+import kuyrcc from  "./kuyrcc.png";
+import kabeli from "./kabeli.png";
+import certificate_python from "./certificate_python.jpg";
+import certificate_python2 from "./certificate_python2.jpg";
+import hult_certificate from "./hult_certificate.png";
+import kabeli_certificate from "./kabeli_certificate.png";
+import autocad2d from "./autocad2d.pdf";
+import autocad3d from "./autocad3d.pdf";
+import remote_certificate from "./remote_certificate.png";
+import municipal_certificate from "./municipal_certificate.png";
+import water_supply from "./water_supply.png";
+import ericgis from "./ericgis.jpeg";
+import toda_new_certificate from "./toda_new_certificate.png";
+import asec_certificate from "./asce_certificate.png";
+import Media_Head from  "./Media_Head.pdf";
+import tabletennis from "./tabletennis.png";
+import see_excellence from "./see_excellence.png";
 
 import marsnepalsurvey from "./marsnepalsurvey.pdf"
 import isolated_footings from "./isolated_footings.pdf"
@@ -81,4 +105,28 @@ export {
   survey,
   marsnepalsurvey,
   isolated_footings,
+  hult,
+  asce,
+  kucec,
+  sourcecad,
+  datacamp,
+  toda,
+  kugic,
+  kuyrcc,
+  kabeli,
+  certificate_python,
+  certificate_python2,
+  hult_certificate,
+  kabeli_certificate,
+  autocad2d,
+  autocad3d,
+  remote_certificate,
+  municipal_certificate,
+  water_supply,
+  ericgis,
+  toda_new_certificate,
+  asec_certificate,
+  Media_Head,
+  tabletennis,
+  see_excellence,
 };

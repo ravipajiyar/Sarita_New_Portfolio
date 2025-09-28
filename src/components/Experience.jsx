@@ -10,7 +10,7 @@ import "react-vertical-timeline-component/style.min.css";
 import { styles } from "../styles";
 import { experiences } from "../constants";
 import { SectionWrapper } from "../hoc";
-import { textVariant } from "../utils/motion";
+import { textVariant, fadeIn } from "../utils/motion";
 
 const ExperienceCard = ({ experience }) => {
   return (
@@ -57,6 +57,22 @@ const ExperienceCard = ({ experience }) => {
 };
 
 const Experience = () => {
+  // Helper function to filter experiences by date range
+  const filterExperiencesByDate = (experiences, startDate, endDate) => {
+    return experiences.filter(exp => {
+      const expDate = new Date(exp.date.split(" - ")[0]);
+      return expDate >= startDate && expDate <= endDate;
+    });
+  };
+
+  // Get current date for filtering
+  const currentDate = new Date();
+  const researchExperiences = experiences.filter(exp => exp.title.includes("Researcher"));
+  const industrialExperiences = experiences.filter(exp => exp.title.includes("Internship"));
+  const clubExperiences = experiences.filter(exp => 
+    !exp.title.includes("Researcher") && !exp.title.includes("Internship")
+  );
+
   return (
     <>
       <motion.div variants={textVariant()}>
@@ -69,14 +85,50 @@ const Experience = () => {
       </motion.div>
 
       <div className='mt-20 flex flex-col'>
-        <VerticalTimeline>
-          {experiences.map((experience, index) => (
-            <ExperienceCard
-              key={`experience-${index}`}
-              experience={experience}
-            />
-          ))}
-        </VerticalTimeline>
+        {/* Research Experience Section */}
+        <motion.div
+          variants={fadeIn("up", "spring", 0.1, 0.75)}
+          className="mb-10"
+        >
+          <h3 className="text-white text-[24px] font-bold text-center mb-10">
+            Research Experience
+          </h3>
+          <VerticalTimeline>
+            {researchExperiences.map((experience, index) => (
+              <ExperienceCard key={index} experience={experience} />
+            ))}
+          </VerticalTimeline>
+        </motion.div>
+
+        {/* Industrial Experience Section */}
+        <motion.div
+          variants={fadeIn("up", "spring", 0.2, 0.75)}
+          className="mb-10"
+        >
+          <h3 className="text-white text-[24px] font-bold text-center mb-10">
+            Industrial Experience
+          </h3>
+          <VerticalTimeline>
+            {industrialExperiences.map((experience, index) => (
+              <ExperienceCard key={index} experience={experience} />
+            ))}
+          </VerticalTimeline>
+        </motion.div>
+
+        {/* Club Experience Section */}
+        <motion.div
+          variants={fadeIn("up", "spring", 0.3, 0.75)}
+          className="mb-10"
+        >
+          <h3 className="text-white text-[24px] font-bold text-center mb-10">
+            Club Experience
+          </h3>
+          <VerticalTimeline>
+            {clubExperiences.map((experience, index) => (
+              <ExperienceCard key={index} experience={experience} />
+            ))}
+          </VerticalTimeline>
+        </motion.div>
       </div>
     </>
   );

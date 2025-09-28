@@ -1,0 +1,2 @@
+import{h as t,a as e,H as r,j as a}from"./three-7f43e5e6.js";const o=()=>{const{progress:s}=t();return e(r,{as:"div",center:!0,style:{display:"flex",justifyContent:"center",alignItems:"center",flexDirection:"column"},children:[a("span",{className:"canvas-loader"}),e("p",{style:{fontSize:14,color:"#F1F1F1",fontWeight:800,marginTop:40},children:[s.toFixed(2),"%"]})]})};export{o as C};
+//# sourceMappingURL=Loader-8f002011.js.map

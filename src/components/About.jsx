@@ -59,13 +59,7 @@ const About = () => {
             variants={fadeIn("", "", 0.1, 1)}
             className="text-secondary text-[17px] leading-[30px]"
           >
-            I am a final-year Civil Engineering student at Kathmandu University,
-            specializing in hydropower and sustainable infrastructure. Passionate
-            about AutoCAD design, transportation systems, and innovative solutions,
-            I strive to enhance project efficiency while prioritizing environmental
-            sustainability. With hands-on experience in fieldwork and infrastructure
-            development, I am dedicated to creating practical designs that contribute
-            to a sustainable and resilient built environment.
+            A recent Civil Engineering graduate from Kathmandu University passionate about structural engineering and technology-driven structural health monitoring. Experienced in hydropower design, hydraulic modeling, and geospatial analysis, with hands-on fieldwork and deep learning research for crack detection. Committed to advancing resilient and sustainable infrastructure solutions.
           </motion.p>
 
           {/* Buttons Section */}

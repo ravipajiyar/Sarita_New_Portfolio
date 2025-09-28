@@ -5,8 +5,6 @@ import {
   FaEnvelope,
   FaMapMarkerAlt,
   FaClock,
-  FaInfoCircle,
-  FaTimes,
 } from "react-icons/fa";
 import { styles } from "../styles";
 import { EarthCanvas } from "./canvas";
@@ -21,7 +19,6 @@ const Contact = () => {
     message: "",
   });
   const [loading, setLoading] = useState(false);
-  const [showInfoCard, setShowInfoCard] = useState(false);
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -38,9 +35,9 @@ const Contact = () => {
         import.meta.env.VITE_APP_EMAILJS_TEMPLATE_ID,
         {
           from_name: form.name,
-          to_name: "JavaScript Mastery",
+          to_name: "Sarita",
           from_email: form.email,
-          to_email: "sujata@jsmastery.pro",
+          to_email: "sarita99444@gmail.com",
           message: form.message,
         },
         import.meta.env.VITE_APP_EMAILJS_PUBLIC_KEY
@@ -93,7 +90,7 @@ const Contact = () => {
                 name="email"
                 value={form.email}
                 onChange={handleChange}
-                placeholder="What's your web address?"
+                placeholder="What's your email address?"
                 className="bg-tertiary py-4 px-6 placeholder:text-secondary text-white rounded-lg outline-none border-none font-medium"
               />
             </label>
@@ -126,74 +123,6 @@ const Contact = () => {
           <EarthCanvas />
         </motion.div>
       </div>
-
-      {/* Information Icon */}
-      <div
-        className="fixed bottom-8 right-8 cursor-pointer z-50"
-        onClick={() => setShowInfoCard(!showInfoCard)}
-      >
-        <FaInfoCircle
-          className="text-[#00CFFD] text-4xl hover:scale-110 transition-transform"
-          title="Contact Information"
-        />
-      </div>
-
-      {/* Contact Information Card */}
-      {showInfoCard && (
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          exit={{ opacity: 0, y: 20 }}
-          className="fixed z-50 bottom-16 right-8 w-[90vw] md:w-[320px] max-w-full bg-black-200/90 backdrop-blur-sm p-6 rounded-lg shadow-lg space-y-4"
-        >
-          {/* Close Button */}
-          <button
-            className="absolute top-2 right-2 text-white text-lg"
-            onClick={() => setShowInfoCard(false)}
-          >
-            <FaTimes />
-          </button>
-
-          {/* Phone */}
-          <div className="flex items-center gap-3 group cursor-pointer hover:bg-black-100/20 p-2 rounded-lg transition-colors">
-            <FaPhoneAlt className="text-[#00CFFD] text-xl flex-shrink-0 group-hover:scale-110 transition-transform" />
-            <div>
-              <h4 className="text-base font-semibold text-white">Call Me</h4>
-              <p className="text-sm text-gray-300">+9779846799444</p>
-            </div>
-          </div>
-
-          {/* Email */}
-          <div className="flex items-center gap-3 group cursor-pointer hover:bg-black-100/20 p-2 rounded-lg transition-colors">
-            <FaEnvelope className="text-[#00CFFD] text-xl flex-shrink-0 group-hover:scale-110 transition-transform" />
-            <div>
-              <h4 className="text-base font-semibold text-white">Email</h4>
-              <p className="text-sm text-gray-300">sarita99444@gmail.com</p>
-            </div>
-          </div>
-
-          {/* Address */}
-          <div className="flex items-center gap-3 group cursor-pointer hover:bg-black-100/20 p-2 rounded-lg transition-colors">
-            <FaMapMarkerAlt className="text-[#00CFFD] text-xl flex-shrink-0 group-hover:scale-110 transition-transform" />
-            <div>
-              <h4 className="text-base font-semibold text-white">Address</h4>
-              <p className="text-sm text-gray-300">Kathmandu, Bagmati, Nepal</p>
-            </div>
-          </div>
-
-          {/* Working Hours */}
-          <div className="flex items-center gap-3 group cursor-pointer hover:bg-black-100/20 p-2 rounded-lg transition-colors">
-            <FaClock className="text-[#00CFFD] text-xl flex-shrink-0 group-hover:scale-110 transition-transform" />
-            <div>
-              <h4 className="text-base font-semibold text-white">
-                Working Hours
-              </h4>
-              <p className="text-sm text-gray-300">Mon - Fri: 10 AM - 8 PM</p>
-              <p className="text-sm text-gray-300">Sat, Sun: Closed</p>
-            </div>
-          </div>
-        </motion.div>
-      )}
     </div>
   );
 };

@@ -26,6 +26,26 @@ import {
   punyamata,
   marsnepalsurvey,
   isolated_footings,
+  toda,
+  kucec,
+  datacamp,
+  sourcecad,
+  hult,
+  asce,
+  kuyrcc,
+  kugic,
+  kabeli,
+  certificate_python,
+  certificate_python2,
+  hult_certificate,
+  kabeli_certificate,
+  autocad2d,
+  autocad3d,
+  remote_certificate,
+  municipal_certificate,
+  water_supply,
+  logo,
+  github,
   meta,
   starbucks,
   tesla,
@@ -34,6 +54,12 @@ import {
   jobit,
   tripguide,
   threejs,
+  ericgis,
+  toda_new_certificate,
+  Media_Head,
+  asec_certificate,
+  tabletennis,
+  see_excellence,
 } from "../assets";
 
 export const navLinks = [
@@ -136,39 +162,94 @@ const technologies = [
 
 const experiences = [
   {
-    title: "Sunkoshi Hydropower Optimization Lead",
-    company_name: "Nepal Hydropower Company",
-    icon: project, // Replace with a suitable hydropower icon
+    title: "Researcher - SHM",
+    company_name: "Kathmandu University",
+    icon: analysis,
     iconBg: "#383E56",
-    date: "July 2022 - Dec 2022",
+    date: "Apr 2025 - Jul 2025",
     points: [
-      "Led the RUM project to enhance water and sediment management in the Sunkoshi Hydropower plant.",
-      "Optimized resources and operational efficiency, reducing sediment-related turbine wear.",
-      "Prepared detailed reports and presented findings to stakeholders.",
+      "Conducted research on Multi Scale Deep Learning for Hairline Crack Detection with Ravi Kumar Pajiyar under Prof. Dr. Sudan Jha's supervision.",
+      "Developed a hybrid CNN-Transformer model for accurate hairline crack detection in concrete structures.",
+      "Collaborated with the Department of Computer Engineering for structural health monitoring applications.",
+      "Research paper submitted for publication, focusing on multiscale feature extraction and global context understanding.",
     ],
   },
   {
-    title: "Road Alignment Designer",
-    company_name: "Mars Road Nepal",
-    icon: design, // Replace with a road design icon
+    title: "Internship Trainee",
+    company_name: "TODA Corporation, Japan-Oriented Construction",
+    icon: building,
     iconBg: "#E6DEDD",
-    date: "Jan 2023 - June 2023",
+    date: "Jun 2025 - Aug 2025",
     points: [
-      "Designed road alignment for challenging terrains using SW-Road, ensuring safety and sustainability.",
-      "Collaborated with surveying teams to gather site data and refine design plans.",
-      "Minimized ecological impact through innovative planning techniques.",
+      "Participated in specialized training program for engineers and supervisors.",
+      "Engaged in live-site construction work and drawing analysis.",
+      "Supervised construction sites and learned Japanese construction practices.",
+      "Gained hands-on experience in international construction methodologies.",
     ],
   },
   {
-    title: "Flood Analysis Specialist",
-    company_name: "Punyamata River Research",
-    icon: analysis, // Replace with a water analysis icon
+    title: "Internship Trainee",
+    company_name: "Kabeli A Hydropower Project (37.6 MW)",
+    icon: project,
     iconBg: "#383E56",
-    date: "July 2023 - Present",
+    date: "Feb 2025 - Apr 2025",
     points: [
-      "Conducted water flow analysis of the Punyamata River using HEC-RAS and EPANET.",
-      "Developed flood prediction models for improved disaster preparedness.",
-      "Integrated GIS data to visualize flood-prone areas and propose mitigation strategies.",
+      "Worked on quality checks and reinforcement work for the run-of-river hydropower project.",
+      "Conducted concrete testing and analysis procedures.",
+      "Assisted in drawing analysis and BOQ preparation.",
+      "Prepared detailed technical reports and documentation.",
+    ],
+  },
+  {
+    title: "Media Head",
+    company_name: "KU Youth Red Cross Circle",
+    icon: design,
+    iconBg: "#E6DEDD",
+    date: "Nov 2024 - Apr 2025",
+    points: [
+      "Led social media management and content creation campaigns.",
+      "Designed promotional materials and documented events.",
+      "Supported website development at https://yrcc.ku.edu.np/",
+      "Enhanced overall digital presence and engagement strategies.",
+    ],
+  },
+  {
+    title: "Executive Member",
+    company_name: "Indoor Club, Kathmandu University",
+    icon: project,
+    iconBg: "#383E56",
+    date: "Mar 2024 - Oct 2025",
+    points: [
+      "Organized skill-based workshops and inter-departmental tournaments.",
+      "Coordinated table tennis, badminton, and chess events.",
+      "Facilitated leadership initiatives and event management.",
+      "Enhanced student engagement and promoted healthy campus lifestyle.",
+    ],
+  },
+  {
+    title: "Remote Sanitation Volunteer",
+    company_name: "EWB Nepal, KU Chapter",
+    icon: analysis,
+    iconBg: "#E6DEDD",
+    date: "Dec 2023 - Mar 2024",
+    points: [
+      "Conducted field data collection and infiltration rate testing using Single Ring Infiltrometer.",
+      "Assessed design flaws and sanitation challenges in rural school infrastructure.",
+      "Proposed improvement strategies for existing toilet facilities.",
+      "Supported septic system planning and implementation.",
+    ],
+  },
+  {
+    title: "General Member",
+    company_name: "KU Civil Engineering Club",
+    icon: design,
+    iconBg: "#383E56",
+    date: "Mar 2021 - Mar 2024",
+    points: [
+      "Organized technical talk shows, treasure hunts, and table tennis tournaments.",
+      "Actively volunteered in various club events and initiatives.",
+      "Attended workshops on municipal drawing and water supply systems.",
+      "Enhanced practical skills through technical training programs.",
     ],
   },
 ];
@@ -313,41 +394,113 @@ const projects = [
   },
 ];
 const certificates = [
+  // Professional Development Certifications
   {
-    title: "AutoCAD Professional Certification",
-    issuer: "Autodesk Certified Professional",
-     year: "2023",
-    credentialId: "ACP-2023-458",
-    downloadLink: "/path-to-autocad-certificate.pdf",
-    icon: autocad
+    title: "TODA Corporation Internship",
+    issuer: "TODA Corporation – Japan-Oriented Construction",
+    year: "2025",
+    downloadLink: toda_new_certificate,
+    icon: toda
   },
   {
-    title: "HEC-RAS Specialist",
-    issuer: "Hydraulic Engineering Center",
-      year: "2023",
-    credentialId: "HEC-2023-789",
-     downloadLink: "/path-to-hecras-certificate.pdf",
-    icon: analysis
+    title: "Kabeli A Hydropower Project Internship",
+    issuer: "Kabeli A Hydropower",
+    year: "2025",
+    downloadLink: kabeli_certificate,
+    icon: kabeli
   },
- {
-      title: "Project Management Fundamentals",
-      issuer: "PMI Certified Associate",
-      year: "2022",
-       credentialId: "PMF-2022-123",
-      downloadLink: "/path-to-project-management-certificate.pdf",
-      icon: project
+  {
+    title: "Water Supply Training",
+    issuer: "Kathmandu University Civil Engineering Club",
+    year: "2025",
+    downloadLink: water_supply,
+    icon: kucec
   },
-   {
-        title: "EPANET Water Analysis",
-       issuer: "Environmental Protection Agency",
-         downloadLink: "/path-to-epanet-certificate.pdf",
-        icon: survey
-   },
-    {
-        title: "SW-Road Design Specialist",
-      issuer: "Softworld Engineering",
-       downloadLink: "/path-to-swroad-certificate.pdf",
-       icon: road
-    },
+  {
+    title: "Going Places with Spatial Analysis",
+    issuer: "Esri",
+    year: "2025",
+    downloadLink: ericgis,
+    icon: gis
+  },
+  {
+    title: "Municipal Drawing",
+    issuer: "Kathmandu University Civil Engineering Club",
+    year: "2025",
+    downloadLink: municipal_certificate,
+    icon: kucec
+  },
+  {
+    title: "AutoCAD 2D",
+    issuer: "SourceCAD",
+    year: "2024",
+    downloadLink: autocad2d,
+    icon: sourcecad
+  },
+  {
+    title: "AutoCAD 3D",
+    issuer: "SourceCAD",
+    year: "2024",
+    downloadLink: autocad3d,
+    icon: sourcecad
+  },
+  {
+    title: "Introduction to Remote Sensing",
+    issuer: "Geo University",
+    year: "2024",
+    downloadLink: remote_certificate,
+    icon: gis
+  },
+  {
+    title: "Python Beginner Certification",
+    issuer: "DataCamp",
+    year: "2024",
+    downloadLink: certificate_python,
+    icon: datacamp
+  },
+  {
+    title: "Python Intermediate Certification",
+    issuer: "DataCamp",
+    year: "2024",
+    downloadLink: certificate_python2,
+    icon: datacamp
+  },
+  // Additional Certifications
+  {
+    title: "Media Head",
+    issuer: "Kathmandu University Youth Red Cross Circle",
+    year: "2024-2025",
+    downloadLink: Media_Head,
+    icon: kuyrcc
+  },
+  {
+    title: "Hult Prize Participant",
+    issuer: "Hult Prize Foundation",
+    year: "2024-2025",
+    downloadLink: hult_certificate,
+    icon: hult
+  },
+  {
+    title: "Table Tennis Coordinator-KUCEC",
+    issuer: "Kathmandu University Civil Engineering Club",
+    year: "2023-2024",
+    downloadLink: tabletennis,
+    icon: kucec
+  },
+  {
+    title: "Outstanding Academic Achievement Award",
+    issuer: "SSCOL",
+    year: "2018",
+    downloadLink: see_excellence,
+    icon: creator
+  },
+  {
+    title: "ASCE Member",
+    issuer: "American Society of Civil Engineers",
+    year: "2024",
+    downloadLink: asec_certificate,
+    icon: asce
+  }
 ];
+
 export { services, technologies, experiences, testimonials, projects, certificates };
