@@ -60,6 +60,8 @@ import {
   asec_certificate,
   tabletennis,
   see_excellence,
+  finalcover,
+  Finalyear_Report,
 } from "../assets";
 
 export const navLinks = [
@@ -111,52 +113,52 @@ const services = [
 
 const technologies = [
   {
-    name: "Autocad",
+    name: "AutoCAD 2D",
     icon: autocad,
   },
   {
-    name: "GIS",
+    name: "Civil 3D",
+    icon: modelling,
+  },
+  {
+    name: "SW-Road",
+    icon: road,
+  },
+  {
+    name: "EPANET",
+    icon: infrastructure,
+  },
+  {
+    name: "HEC-RAS",
+    icon: bridge,
+  },
+  {
+    name: "SAP",
+    icon: building,
+  },
+  {
+    name: "Total Station",
+    icon: surveying,
+  },
+  {
+    name: "QGIS",
     icon: gis,
   },
   {
-    name: "3d Modelling",
-    icon: modelling,
+    name: "Project Libre",
+    icon: project,
+  },
+  {
+    name: "Git",
+    icon: git,
+  },
+  {
+    name: "ML",
+    icon: analysis,
   },
   {
     name: "Construction",
     icon: construction,
-  },
-  {
-    name: "Brickwall",
-    icon: brickwall,
-  },
-  {
-    name: "Building",
-    icon: building,
-  },
-  {
-    name: "Bridge",
-    icon: bridge,
-  },
-  {
-    name: "Infrastructure",
-    icon: infrastructure,
-  },
-  {
-    name: "Survey",
-    icon: surveying,
-  },
-  {
-    name: "git",
-    icon: git,
-  },
-  {
-    name: "figma",
-    icon: figma,
-  },
-  {
-    name: "road",
-    icon: road,
   },
 ];
 
@@ -282,6 +284,29 @@ const testimonials = [
 ];
 
 const projects = [
+  {
+    name: "Kabeli-A Hydroelectric Project Analysis",
+    description:
+      "Conducted hydrological, hydraulic, and structural analysis for the Kabeli-A Hydroelectric Project, along with economic and financial assessments to optimize power generation.",
+    tags: [
+      {
+        name: "hydrology",
+        color: "blue-text-gradient",
+      },
+      {
+        name: "hydraulic-analysis",
+        color: "green-text-gradient",
+      },
+      {
+        name: "structural-analysis",
+        color: "pink-text-gradient",
+      },
+    ],
+    image: finalcover, // replace with actual imported image variable
+    report: Finalyear_Report, // update if you have the file path
+    source_code_link: "https://github.com/saritasapkota123/FINAL-YEAR-MAJOR-PROJECT-",
+  },
+  
   {
     name: "Sunkoshi Hydropower RUM Optimization",
     description:
@@ -410,6 +435,13 @@ const certificates = [
     icon: kabeli
   },
   {
+    title: "Municipal Drawing",
+    issuer: "Kathmandu University Civil Engineering Club",
+    year: "2025",
+    downloadLink: municipal_certificate,
+    icon: kucec
+  },
+  {
     title: "Water Supply Training",
     issuer: "Kathmandu University Civil Engineering Club",
     year: "2025",
@@ -422,13 +454,6 @@ const certificates = [
     year: "2025",
     downloadLink: ericgis,
     icon: gis
-  },
-  {
-    title: "Municipal Drawing",
-    issuer: "Kathmandu University Civil Engineering Club",
-    year: "2025",
-    downloadLink: municipal_certificate,
-    icon: kucec
   },
   {
     title: "AutoCAD 2D",
@@ -467,6 +492,13 @@ const certificates = [
   },
   // Additional Certifications
   {
+    title: "ASCE Member",
+    issuer: "American Society of Civil Engineers",
+    year: "2024",
+    downloadLink: asec_certificate,
+    icon: asce
+  },
+  {
     title: "Media Head",
     issuer: "Kathmandu University Youth Red Cross Circle",
     year: "2024-2025",
@@ -494,13 +526,7 @@ const certificates = [
     downloadLink: see_excellence,
     icon: creator
   },
-  {
-    title: "ASCE Member",
-    issuer: "American Society of Civil Engineers",
-    year: "2024",
-    downloadLink: asec_certificate,
-    icon: asce
-  }
+ 
 ];
 
 export { services, technologies, experiences, testimonials, projects, certificates };
