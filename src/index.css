@@ -224,3 +224,54 @@
 .custom-scrollbar::-webkit-scrollbar-thumb:hover {
   background: rgba(145, 94, 255, 0.7);
 }
+
+/* Responsive timeline fixes */
+.vertical-timeline-custom-line::before {
+  background: #232631;
+}
+
+@media only screen and (max-width: 1169px) {
+  .vertical-timeline-custom-line::before {
+    left: 18px;
+  }
+}
+
+/* Project card hover effects */
+.card-img_hover {
+  opacity: 0;
+  transition: opacity 0.3s ease-in-out;
+}
+
+.bg-tertiary:hover .card-img_hover {
+  opacity: 1;
+}
+
+/* Modal scroll fixes */
+.overflow-y-auto {
+  -webkit-overflow-scrolling: touch;
+}
+
+@media only screen and (max-width: 640px) {
+  .project-card-container {
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+}
+
+/* Ensure modals are always scrollable on mobile */
+@media only screen and (max-width: 640px) {
+  .fixed.inset-0 {
+    position: fixed;
+    height: 100vh;
+    height: -webkit-fill-available;
+  }
+}
+
+/* Improve touch targets on mobile */
+@media only screen and (max-width: 640px) {
+  button, 
+  .cursor-pointer {
+    min-height: 44px;
+    min-width: 44px;
+  }
+}

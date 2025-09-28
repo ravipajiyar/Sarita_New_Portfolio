@@ -16,7 +16,7 @@ const ChatBot = () => {
     
     // Education related queries
     if (message.includes('education') || message.includes('study') || message.includes('university')) {
-      return "Sarita is pursuing B.E. Civil Engineering at Kathmandu University (2021-2025). She's passionate about structural engineering and technology-driven monitoring.";
+      return "Sarita is a recent graduate from Kathmandu University with a B.E. in Civil Engineering (2021-2025). She specialized in Hydropower and is passionate about structural engineering and technology-driven monitoring.";
     }
 
     // Experience related queries

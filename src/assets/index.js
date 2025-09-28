@@ -63,6 +63,11 @@ import tabletennis from "./tabletennis.png";
 import see_excellence from "./see_excellence.png";
 import finalcover from "./finalcover.png";
 import Finalyear_Report from "./Finalyear_Report.pdf";
+import Shyam from "./Shyam.png";
+import ramesh from "./ramesh.png";
+import sita from "./sita.png";
+import trishuli_report from "./trishuli_report.pdf";
+import rum_report from "./rum_report.pdf";
 
 import marsnepalsurvey from "./marsnepalsurvey.pdf"
 import isolated_footings from "./isolated_footings.pdf"
@@ -133,4 +138,9 @@ export {
   see_excellence,
   finalcover,
   Finalyear_Report,
+  Shyam,
+  ramesh,
+  sita, 
+  trishuli_report,
+  rum_report,
 };

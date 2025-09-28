@@ -12,7 +12,7 @@ const HireMe = () => {
     email: "",
     projectType: "Civil Engineering Design",
     projectDetails: "",
-    budget: "$1,000 - $5,000"
+    budget: "$200 - $500"  // Changed default budget range
   });
   const [loading, setLoading] = useState(false);
 
@@ -160,9 +160,9 @@ const HireMe = () => {
                   onChange={handleChange}
                   className="w-full bg-tertiary/50 rounded-lg p-4 text-white outline-none"
                 >
-                  <option>$1,000 - $5,000</option>
-                  <option>$5,000 - $10,000</option>
-                  <option>$10,000+</option>
+                  <option>$200 - $500</option>
+                  <option>$500 - $800</option>
+                  <option>$800 - $1,200</option>
                 </select>
               </div>
 

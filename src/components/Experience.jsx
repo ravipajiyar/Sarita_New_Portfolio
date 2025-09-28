@@ -18,8 +18,10 @@ const ExperienceCard = ({ experience }) => {
       contentStyle={{
         background: "#1d1836",
         color: "#fff",
+        padding: "1rem",
+        boxShadow: "0 4px 6px rgba(0, 0, 0, 0.1)",
       }}
-      contentArrowStyle={{ borderRight: "7px solid  #232631" }}
+      contentArrowStyle={{ borderRight: "7px solid #1d1836" }}
       date={experience.date}
       iconStyle={{ background: experience.iconBg }}
       icon={
@@ -33,11 +35,8 @@ const ExperienceCard = ({ experience }) => {
       }
     >
       <div>
-        <h3 className='text-white text-[24px] font-bold'>{experience.title}</h3>
-        <p
-          className='text-secondary text-[16px] font-semibold'
-          style={{ margin: 0 }}
-        >
+        <h3 className='text-white text-[20px] sm:text-[24px] font-bold'>{experience.title}</h3>
+        <p className='text-secondary text-[14px] sm:text-[16px] font-semibold mt-1'>
           {experience.company_name}
         </p>
       </div>
@@ -46,7 +45,7 @@ const ExperienceCard = ({ experience }) => {
         {experience.points.map((point, index) => (
           <li
             key={`experience-point-${index}`}
-            className='text-white-100 text-[14px] pl-1 tracking-wider'
+            className='text-white-100 text-[12px] sm:text-[14px] pl-1 tracking-wider'
           >
             {point}
           </li>
@@ -57,16 +56,6 @@ const ExperienceCard = ({ experience }) => {
 };
 
 const Experience = () => {
-  // Helper function to filter experiences by date range
-  const filterExperiencesByDate = (experiences, startDate, endDate) => {
-    return experiences.filter(exp => {
-      const expDate = new Date(exp.date.split(" - ")[0]);
-      return expDate >= startDate && expDate <= endDate;
-    });
-  };
-
-  // Get current date for filtering
-  const currentDate = new Date();
   const researchExperiences = experiences.filter(exp => exp.title.includes("Researcher"));
   const industrialExperiences = experiences.filter(exp => exp.title.includes("Internship"));
   const clubExperiences = experiences.filter(exp => 
@@ -74,7 +63,7 @@ const Experience = () => {
   );
 
   return (
-    <>
+    <div className="relative w-full overflow-hidden">
       <motion.div variants={textVariant()}>
         <p className={`${styles.sectionSubText} text-center`}>
           What I have done so far
@@ -85,52 +74,29 @@ const Experience = () => {
       </motion.div>
 
       <div className='mt-20 flex flex-col'>
-        {/* Research Experience Section */}
-        <motion.div
-          variants={fadeIn("up", "spring", 0.1, 0.75)}
-          className="mb-10"
-        >
-          <h3 className="text-white text-[24px] font-bold text-center mb-10">
-            Research Experience
-          </h3>
-          <VerticalTimeline>
-            {researchExperiences.map((experience, index) => (
-              <ExperienceCard key={index} experience={experience} />
-            ))}
-          </VerticalTimeline>
-        </motion.div>
-
-        {/* Industrial Experience Section */}
-        <motion.div
-          variants={fadeIn("up", "spring", 0.2, 0.75)}
-          className="mb-10"
-        >
-          <h3 className="text-white text-[24px] font-bold text-center mb-10">
-            Industrial Experience
-          </h3>
-          <VerticalTimeline>
-            {industrialExperiences.map((experience, index) => (
-              <ExperienceCard key={index} experience={experience} />
-            ))}
-          </VerticalTimeline>
-        </motion.div>
-
-        {/* Club Experience Section */}
-        <motion.div
-          variants={fadeIn("up", "spring", 0.3, 0.75)}
-          className="mb-10"
-        >
-          <h3 className="text-white text-[24px] font-bold text-center mb-10">
-            Club Experience
-          </h3>
-          <VerticalTimeline>
-            {clubExperiences.map((experience, index) => (
-              <ExperienceCard key={index} experience={experience} />
-            ))}
-          </VerticalTimeline>
-        </motion.div>
+        {/* Experience Sections */}
+        {[
+          { title: "Research Experience", data: researchExperiences, delay: 0.1 },
+          { title: "Industrial Experience", data: industrialExperiences, delay: 0.2 },
+          { title: "Club Experience", data: clubExperiences, delay: 0.3 }
+        ].map((section, idx) => (
+          <motion.div
+            key={section.title}
+            variants={fadeIn("up", "spring", section.delay, 0.75)}
+            className="mb-10 px-4 sm:px-0"
+          >
+            <h3 className="text-white text-[20px] sm:text-[24px] font-bold text-center mb-10">
+              {section.title}
+            </h3>
+            <VerticalTimeline className="vertical-timeline-custom-line">
+              {section.data.map((experience, index) => (
+                <ExperienceCard key={index} experience={experience} />
+              ))}
+            </VerticalTimeline>
+          </motion.div>
+        ))}
       </div>
-    </>
+    </div>
   );
 };
 

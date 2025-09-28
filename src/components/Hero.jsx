@@ -99,8 +99,7 @@ const Hero = () => {
                   transition={{ duration: 0.8, delay: 0.6 }}
                   className="text-secondary text-base sm:text-lg lg:text-xl leading-relaxed mb-8 max-w-2xl"
                 >
-                  A recent Civil Engineering graduate specializing in structural engineering and technology-driven monitoring. 
-                  Experienced in hydropower design, hydraulic modeling, and deep learning applications for infrastructure health assessment.
+                  A recent Civil Engineering graduate from Kathmandu University specialized in Hydropower, passionate about structural engineering and technology-driven health monitoring. Experienced in hydropower design, hydraulic modeling, geospatial analysis, and deep learning research for crack detection, with a commitment to resilient and sustainable infrastructure
                 </motion.p>
 
                 {/* Call-to-Action Buttons */}
@@ -185,7 +184,7 @@ const Hero = () => {
 const socialLinks = [
   {
     name: "GitHub",
-    url: "https://github.com/yourusername",
+    url: "https://github.com/saritasapkota123",
     icon: FaGithub,
   },
   {

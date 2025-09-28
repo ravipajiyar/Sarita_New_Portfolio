@@ -62,6 +62,11 @@ import {
   see_excellence,
   finalcover,
   Finalyear_Report,
+  Shyam,
+  ramesh,
+  sita, 
+  trishuli_report,
+  rum_report,
 } from "../assets";
 
 export const navLinks = [
@@ -258,28 +263,27 @@ const experiences = [
 
 const testimonials = [
   {
-    "testimonial": "Sarita's dedication, innovative problem-solving, and multidisciplinary expertise make me incredibly proud as her mother.",
-    "name": "Sita Sapkota",
-    "designation": "Businesswoman",
-    "company": "Self Employed",
-     "image": "https://via.placeholder.com/100x100?text=SS"
-  },
-
-  {
     testimonial:
       "Her innovative approach to road alignment design and meticulous attention to detail have been an asset to our project.",
     name: "Prof. Ramesh Kumar Maskey",
     designation: "Professor",
     company: "Kathmandu University",
-    image: "https://via.placeholder.com/100x100?text=RK",
+    image: ramesh,
   },
   {
     testimonial:
       "Sarita's ability to analyze complex hydraulic data and provide actionable insights is remarkable.",
-    name: "Manish Prakash",
+    name: "Shyam Sundar Khadka",
     designation: "Research Supervisor",
     company: "KU Research Labs",
-    image: "https://via.placeholder.com/100x100?text=MP",
+    image: Shyam,
+  },
+  {
+    "testimonial": "Sarita's dedication, innovative problem-solving, and multidisciplinary expertise make me incredibly proud as her mother.",
+    "name": "Sita Sapkota",
+    "designation": "Businesswoman",
+    "company": "Self Employed",
+     "image": sita,
   },
 ];
 
@@ -326,8 +330,8 @@ const projects = [
       },
     ],
     image: sunkoshi,
-    report: "/path-to-sunkoshi-report.pdf",
-    source_code_link: "https://github.com/",
+    report: rum_report,
+    source_code_link: "https://github.com/saritasapkota123/Sunkoshi-hydropower-",
   },
   {
     name: "Mars Nepal Road Design",
@@ -349,30 +353,9 @@ const projects = [
     ],
     image: marsnepal,
     report: marsnepalsurvey,
-    source_code_link: "https://github.com/",
+    source_code_link: "https://github.com/saritasapkota123/Mars-Nepal-Road-Design",
   },
-  {
-    name: "Punyamata River Flow Analysis",
-    description:
-      "Conducted water flow analysis of Punyamata River using HEC-RAS and EPANET for flood prediction and resource management.",
-    tags: [
-      {
-        name: "flood-analysis",
-        color: "blue-text-gradient",
-      },
-      {
-        name: "hec-ras",
-        color: "green-text-gradient",
-      },
-      {
-        name: "epanet",
-        color: "pink-text-gradient",
-      },
-    ],
-    image: punyamata,
-    report: "/path-to-sunkoshi-report.pdf",
-    source_code_link: "https://github.com/",
-  },
+  
   {
     name: "Footings Demonstrative Model",
     description:
@@ -393,7 +376,7 @@ const projects = [
     ],
     image: footings,
     report: isolated_footings,
-    source_code_link: "https://github.com/",
+    source_code_link: "https://github.com/saritasapkota123/Footings-Demonstrative-Model",
   },
   {
     name: "Trishuli Hydropower Topography Model",
@@ -414,8 +397,8 @@ const projects = [
       },
     ],
     image: trishuli,
-    report: "/path-to-sunkoshi-report.pdf",
-    source_code_link: "https://github.com/",
+    report: trishuli_report,
+    source_code_link: "https://github.com/saritasapkota123/Trishuli-Hydropower-Topography-Model",
   },
 ];
 const certificates = [
