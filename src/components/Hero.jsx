@@ -142,7 +142,7 @@ const Hero = () => {
               transition={{ duration: 1, delay: 0.5 }}
               className="flex-1 flex items-end justify-center h-full pb-8 sm:pb-12 lg:pb-16 max-w-lg lg:max-w-none"
             >
-              <div className="w-full h-[300px] sm:h-[400px] lg:h-[500px] max-w-[400px] sm:max-w-[500px] relative">
+              <div className="w-full h-[300px] sm:h-[400px] lg:h-[450px] xl:h-[500px] max-w-[350px] sm:max-w-[450px] lg:max-w-[500px] xl:max-w-[550px] relative">
                 <div className="absolute inset-0 bg-gradient-to-br from-[#915EFF] via-transparent to-[#64ffda] opacity-10 rounded-full blur-3xl"></div>
                 <CivilCanvas />
               </div>
