@@ -98,11 +98,6 @@ export const navLinks = [
     id: "blog",
     title: "Blog",
     url: "https://blogsarita.vercel.app/"
-  },
-  {
-    id: "digital-resume",
-    title: "Digital Resume",
-    url: "https://saritadigitalresume.vercel.app/"
   }
 ];
 

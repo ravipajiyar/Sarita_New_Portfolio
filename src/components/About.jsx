@@ -36,13 +36,6 @@ const ServiceCard = ({ index, title, icon }) => (
 );
 
 const About = () => {
-  const handleHireMeClick = () => {
-    const hireMeSection = document.getElementById('hireme');
-    if (hireMeSection) {
-      hireMeSection.scrollIntoView({ behavior: 'smooth' });
-    }
-  };
-
   return (
     <>
       {/* Section Header */}
@@ -73,16 +66,32 @@ const About = () => {
             >
               Download Resume
             </motion.a>
-            <motion.button
-              onClick={handleHireMeClick}
-              whileHover={{ scale: 1.1 }}
-              whileTap={{ scale: 0.9 }}
-              className="bg-green-500 text-white py-3 px-6 rounded-md shadow-md text-lg font-bold hover:bg-green-400 transition"
+            <motion.a
+              href="https://saritadigitalresume.vercel.app/"
+              target="_blank"
+              rel="noopener noreferrer"
+              whileHover={{ 
+                scale: 1.05,
+                backgroundColor: "rgba(100, 255, 218, 0.1)"
+              }}
+              whileTap={{ scale: 0.95 }}
+              className="border-2 border-[#64ffda] text-[#64ffda] px-6 sm:px-8 py-2.5 sm:py-3 rounded-full font-semibold shadow-lg hover:bg-[#64ffda] hover:text-[#0a192f] transition-all duration-300 text-center backdrop-blur-sm text-sm sm:text-base flex items-center justify-center gap-2"
             >
-              <Link to="/hireme" style={{color:"white"}}>
-                 Hire Me
-              </Link>
-            </motion.button>
+              Digital Resume
+              <svg 
+                className="w-4 h-4 inline-block" 
+                fill="none" 
+                stroke="currentColor" 
+                viewBox="0 0 24 24"
+              >
+                <path 
+                  strokeLinecap="round" 
+                  strokeLinejoin="round" 
+                  strokeWidth={2} 
+                  d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" 
+                />
+              </svg>
+            </motion.a>
           </div>
         </div>
 

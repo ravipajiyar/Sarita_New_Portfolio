@@ -132,6 +132,20 @@ const Hero = () => {
                 >
                   Download CV
                 </motion.a>
+                <motion.button 
+                  onClick={() => {
+                    const element = document.querySelector("#hireme");
+                    element?.scrollIntoView({ behavior: "smooth" });
+                  }}
+                  whileHover={{ 
+                    scale: 1.05,
+                    boxShadow: "0 10px 30px rgba(100, 255, 218, 0.4)"
+                  }}
+                  whileTap={{ scale: 0.95 }}
+                  className="bg-gradient-to-r from-[#64ffda] to-[#4fd8b8] text-[#0a192f] px-6 sm:px-8 py-2.5 sm:py-3 rounded-full font-semibold shadow-lg hover:shadow-xl transition-all duration-300 text-center text-sm sm:text-base"
+                >
+                  Hire Me
+                </motion.button>
               </motion.div>
             </motion.div>
 
