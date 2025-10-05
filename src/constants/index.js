@@ -74,7 +74,6 @@ export const navLinks = [
     id: "about",
     title: "About",
   },
-  
   {
     id: "work",
     title: "Experience",
@@ -95,6 +94,16 @@ export const navLinks = [
     id: "contact",
     title: "Contact",
   },
+  {
+    id: "blog",
+    title: "Blog",
+    url: "https://blogsarita.vercel.app/"
+  },
+  {
+    id: "digital-resume",
+    title: "Digital Resume",
+    url: "https://saritadigitalresume.vercel.app/"
+  }
 ];
 
 const services = [
