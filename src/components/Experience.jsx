@@ -58,9 +58,9 @@ const ExperienceCard = ({ experience }) => {
 
 const Experience = () => {
   const researchExperiences = experiences.filter(exp => exp.title.includes("Researcher"));
-  const industrialExperiences = experiences.filter(exp => exp.title.includes("Internship"));
+  const industrialExperiences = experiences.filter(exp => exp.title.includes("Internship") || exp.title.includes("Officer"));
   const clubExperiences = experiences.filter(exp => 
-    !exp.title.includes("Researcher") && !exp.title.includes("Internship")
+    !exp.title.includes("Researcher") && !exp.title.includes("Internship") && !exp.title.includes("Officer")
   );
 
   // Create section divider component

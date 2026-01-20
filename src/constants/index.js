@@ -172,6 +172,7 @@ const technologies = [
 ];
 
 const experiences = [
+ 
   {
     title: "Researcher - SHM",
     company_name: "Kathmandu University",
@@ -196,6 +197,23 @@ const experiences = [
       "Engaged in live-site construction work and drawing analysis.",
       "Supervised construction sites and learned Japanese construction practices.",
       "Gained hands-on experience in international construction methodologies.",
+    ],
+  },
+  {
+    title: "Junior Officer - Civil Engineer (Level-7)",
+    company_name: "Civil Engineering Organization",
+    icon: building,
+    iconBg: "#E6DEDD",
+    date: "Dec 2025 - Present",
+    points: [
+      "Study, design, and prepare project drawings for feasibility studies and projects under construction.",
+      "Prepare engineering designs, drawings, BOQs, and detailed cost estimations.",
+      "Conduct rate analysis, quantity estimations, and cost-benefit analyses.",
+      "Participate in feasibility studies and site investigations under senior engineers.",
+      "Perform site visits, data collection, and supervision of construction projects.",
+      "Prepare technical reports, site visit reports, and project documentation.",
+      "Execute tasks and assignments as delegated by management.",
+      "Maintain equipment and ensure professional work standards.",
     ],
   },
   {

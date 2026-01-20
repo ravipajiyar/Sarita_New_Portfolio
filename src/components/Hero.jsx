@@ -3,7 +3,7 @@ import { styles } from "../styles";
 import { CivilCanvas } from "./canvas";
 import sarruImage from '../assets/sarru.jpeg';
 import TypewriterEffect from './TypewriterEffect';
-import { lazy, Suspense } from 'react';
+import { lazy, Suspense, useState } from 'react';
 import {
   FaGithub,
   FaLinkedin,
@@ -12,10 +12,45 @@ import {
 } from "react-icons/fa";
 
 const Hero = () => {
+  const [showLicenseModal, setShowLicenseModal] = useState(false);
+
   return (
     <section className="relative w-full h-screen overflow-hidden">
       {/* Background - keeping original styling */}
       <div className="absolute inset-0"></div>
+
+      {/* License Modal */}
+      {showLicenseModal && (
+        <motion.div
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          exit={{ opacity: 0 }}
+          onClick={() => setShowLicenseModal(false)}
+          className="fixed inset-0 bg-black bg-opacity-50 z-50 flex items-center justify-center p-4"
+        >
+          <motion.div
+            initial={{ scale: 0.8, opacity: 0 }}
+            animate={{ scale: 1, opacity: 1 }}
+            onClick={(e) => e.stopPropagation()}
+            className="bg-[#1a1a2e] rounded-2xl p-8 max-w-2xl w-full max-h-[90vh] overflow-auto"
+          >
+            <div className="flex justify-between items-center mb-4">
+              <h2 className="text-2xl font-bold text-white">Professional License</h2>
+              <button
+                onClick={() => setShowLicenseModal(false)}
+                className="text-gray-400 hover:text-white text-2xl"
+              >
+                ×
+              </button>
+            </div>
+            <img
+              src="/src/assets/liscense.jpeg"
+              alt="Civil Engineer License"
+              className="w-full rounded-lg"
+            />
+          </motion.div>
+        </motion.div>
+      )}
 
       {/* Main Content Container with proper padding */}
       <div className="relative z-10 h-full px-6 sm:px-12 lg:px-20 xl:px-24 pt-20 pb-8">
@@ -89,7 +124,7 @@ const Hero = () => {
               {/* Professional Title with Typewriter */}
               <div className="text-[#dfd9ff] font-medium text-lg sm:text-xl md:text-2xl lg:text-3xl leading-tight mb-4 sm:mb-6">
                 I'm a{' '}
-                <TypewriterEffect textToType="Civil Engineer" />
+                <TypewriterEffect textToType="Licensed Civil Engineer" />
               </div>
 
               {/* Description with better spacing */}
@@ -99,7 +134,7 @@ const Hero = () => {
                 transition={{ duration: 0.8, delay: 0.6 }}
                 className="text-secondary text-sm sm:text-base lg:text-lg xl:text-xl leading-relaxed mb-6 sm:mb-8"
               >
-                A recent Civil Engineering graduate from Kathmandu University specialized in Hydropower, passionate about structural engineering and technology-driven health monitoring. Experienced in hydropower design, hydraulic modeling, geospatial analysis, and deep learning research for crack detection, with a commitment to resilient and sustainable infrastructure
+                A licensed Civil Engineer and recent graduate from Kathmandu University specialized in Hydropower, passionate about structural engineering and technology-driven health monitoring. Experienced in hydropower design, hydraulic modeling, geospatial analysis, and deep learning research for crack detection, with a commitment to resilient and sustainable infrastructure.
               </motion.p>
 
               {/* Call-to-Action Buttons */}
@@ -107,7 +142,7 @@ const Hero = () => {
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.8, delay: 0.8 }}
-                className="flex flex-col sm:flex-row gap-3 sm:gap-4"
+                className="flex flex-col sm:flex-row gap-3 sm:gap-4 flex-wrap"
               >
                 <motion.a 
                   href="#works" 
@@ -132,6 +167,17 @@ const Hero = () => {
                 >
                   Download CV
                 </motion.a>
+                <motion.button
+                  onClick={() => setShowLicenseModal(true)}
+                  whileHover={{ 
+                    scale: 1.05,
+                    backgroundColor: "rgba(100, 255, 218, 0.2)"
+                  }}
+                  whileTap={{ scale: 0.95 }}
+                  className="border-2 border-[#64ffda] text-[#64ffda] px-6 sm:px-8 py-2.5 sm:py-3 rounded-full font-semibold shadow-lg hover:bg-[#64ffda] hover:text-[#0a192f] transition-all duration-300 text-center backdrop-blur-sm text-sm sm:text-base"
+                >
+                  View License
+                </motion.button>
                 <motion.button 
                   onClick={() => {
                     const element = document.querySelector("#hireme");
