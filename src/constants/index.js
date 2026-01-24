@@ -67,6 +67,10 @@ import {
   sita, 
   trishuli_report,
   rum_report,
+  Literature_Review,
+  Methodological_Framework,
+  Data_Supporting_Material,
+  Urban_Hydrological_Nepal_Europe,
 } from "../assets";
 
 export const navLinks = [
@@ -81,6 +85,10 @@ export const navLinks = [
   {
     id: "works",
     title: "Projects",
+  },
+  {
+    id: "murcs",
+    title: "MUrCS Project",
   },
   {
     id: "skills",
@@ -187,19 +195,6 @@ const experiences = [
     ],
   },
   {
-    title: "Internship Trainee",
-    company_name: "TODA Corporation, Japan-Oriented Construction",
-    icon: building,
-    iconBg: "#E6DEDD",
-    date: "Jun 2025 - Aug 2025",
-    points: [
-      "Participated in specialized training program for engineers and supervisors.",
-      "Engaged in live-site construction work and drawing analysis.",
-      "Supervised construction sites and learned Japanese construction practices.",
-      "Gained hands-on experience in international construction methodologies.",
-    ],
-  },
-  {
     title: "Junior Officer - Civil Engineer (Level-7)",
     company_name: "Civil Engineering Organization",
     icon: building,
@@ -216,6 +211,20 @@ const experiences = [
       "Maintain equipment and ensure professional work standards.",
     ],
   },
+  {
+    title: "Internship Trainee",
+    company_name: "TODA Corporation, Japan-Oriented Construction",
+    icon: building,
+    iconBg: "#E6DEDD",
+    date: "Jun 2025 - Aug 2025",
+    points: [
+      "Participated in specialized training program for engineers and supervisors.",
+      "Engaged in live-site construction work and drawing analysis.",
+      "Supervised construction sites and learned Japanese construction practices.",
+      "Gained hands-on experience in international construction methodologies.",
+    ],
+  },
+  
   {
     title: "Internship Trainee",
     company_name: "Kabeli A Hydropower Project (37.6 MW)",
@@ -533,5 +542,140 @@ const certificates = [
   },
  
 ];
+
+export const murcsProject = {
+  title: "MUrCS - Multi-Scale Urban Resilience through Climate-Smart Infrastructure",
+  completedTasks: [
+    {
+      title: "Literature Review",
+      description: "Comprehensive review of existing research on urban flood resilience and climate-smart infrastructure solutions.",
+      file: Literature_Review,
+      fullDescription: "An extensive literature review examining state-of-the-art approaches to urban flood resilience, green infrastructure effectiveness, and climate adaptation strategies. This review synthesizes findings from 50+ peer-reviewed journals and establishes the theoretical foundation for the MUrCS project.",
+    },
+    {
+      title: "Methodological Framework Support",
+      description: "Detailed framework supporting the methodological approach for the MUrCS project implementation.",
+      file: Methodological_Framework,
+      fullDescription: "Comprehensive methodological documentation outlining research design, data collection protocols, analytical approaches, and validation strategies. Includes detailed flowcharts, timelines, and alignment with project objectives.",
+    },
+  ],
+  ongoingTasks: [
+    {
+      taskNumber: "1.1",
+      title: "Literature Review – Ongoing",
+      description: "Expanding and deepening the literature base with recent and advanced studies",
+      details: [
+        {
+          subtitle: "Expanding literature base with recent and advanced studies",
+          points: [
+            "Conducting deeper thematic analysis of selected papers",
+            "Refining research questions based on findings",
+            "Synthesizing literature to build theoretical grounding",
+            "Preparing structured literature review write-up",
+          ],
+        },
+      ],
+      status: "ongoing",
+    },
+    {
+      taskNumber: "1.2",
+      title: "Methodological Framework – Ongoing",
+      description: "Refining selected methodology based on literature insights",
+      details: [
+        {
+          subtitle: "Refining methodology and validation strategy",
+          points: [
+            "Aligning methods with data availability and project objectives",
+            "Developing preliminary validation strategy",
+            "Coordinating with team members on methodological alignment",
+            "Preparing groundwork for Phase 2 (model development/validation)",
+          ],
+        },
+      ],
+      status: "ongoing",
+    },
+    {
+      taskNumber: "2.1",
+      title: "Hydrological Simulation Implementation",
+      description: "Application of validated parameters into various hydrological calculations",
+      details: [
+        {
+          subtitle: "Key Applications:",
+          points: [
+            "Runoff calculations",
+            "Flood depth estimation",
+            "Calibration of Rational Method outputs to urban sub-catchments",
+          ],
+        },
+        {
+          subtitle: "Current Stage:",
+          points: ["Parameter handover completed; numerical execution ongoing."],
+        },
+      ],
+      status: "ongoing",
+    },
+    {
+      taskNumber: "2.2",
+      title: "Computational Modeling (Python / ANSYS Fluent)",
+      description: "Integration of rainfall, infiltration, and GI runoff reduction in computational models",
+      details: [
+        {
+          subtitle: "Integration of:",
+          points: [
+            "Rainfall intensity (140 mm/hr)",
+            "Infiltration rates (2.5–4.0 cm/hr)",
+            "GI runoff reduction (40%)",
+            "Development of pre-GI vs post-GI flood scenarios",
+          ],
+        },
+        {
+          subtitle: "Current Stage:",
+          points: ["Model scripting and scenario setup underway."],
+        },
+      ],
+      status: "ongoing",
+    },
+    {
+      taskNumber: "2.3",
+      title: "Structural Design Development",
+      description: "Climate-smart structural design using runoff and flood thresholds",
+      details: [
+        {
+          subtitle: "Use of runoff and flood thresholds for:",
+          points: [
+            "Hydraulic load estimation",
+            "Climate-smart structural design in AutoCAD Civil 3D",
+          ],
+        },
+        {
+          subtitle: "Current Stage:",
+          points: ["Preliminary structural logic alignment ongoing."],
+        },
+      ],
+      status: "ongoing",
+    },
+  ],
+  preliminaryOutputs: [
+    {
+      title: "Data and Supporting Material",
+      description: "Comprehensive collection of all data, analysis files, and supporting materials for the MUrCS project.",
+      file: Data_Supporting_Material,
+      fullDescription: "Complete dataset including rainfall records, infiltration measurements, GIS layers, computational model inputs, calibration parameters, sensitivity analysis results, and all supporting documentation. This archive contains the foundational data required for Phase 2 model development and validation.",
+    },
+    {
+      title: "Urban-Hydrological Scenario and Global Comparison",
+      description: "Comparative analysis of urban-hydrological scenarios between Nepal and Europe.",
+      file: Urban_Hydrological_Nepal_Europe,
+      fullDescription: "A detailed comparative analysis of urban-hydrological scenarios between Nepal and Europe, focusing on flood resilience, green infrastructure implementation, and climate adaptation strategies. This report highlights key differences in urban-hydrological characteristics, challenges specific to each region, and best practices for enhancing urban flood resilience in diverse geographical contexts. The comparison includes climate patterns, drainage infrastructure capacity, land use impacts, and adaptation strategies tailored to local conditions.",
+    },
+    {
+      title: "Flood Calculator",
+      description: "Interactive tool for estimating urban flood risk in Nepal.",
+      isLink: true,
+      file: "https://floodcalculator.lovable.app/",
+      fullDescription: "Urban Flood Likelihood Calculator is a web-based tool that estimates urban flood risk in Nepal by comparing rainfall-driven runoff with drainage capacity using the Rational Method and Manning's Equation. This interactive tool supports scenario planning and decision-making by allowing users to input various parameters such as rainfall intensity, infiltration rates, land use characteristics, and green infrastructure effectiveness. The calculator provides real-time flood likelihood assessments and helps evaluate the impact of climate-smart infrastructure interventions on urban resilience.",
+    },
+  ],
+};
 
 export { services, technologies, experiences, testimonials, projects, certificates };

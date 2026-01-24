@@ -1,2 +1,0 @@
-import{a as i,j as a}from"./three-7f43e5e6.js";import{s as t}from"./index-8d410d8c.js";import{a as o}from"./motion-c3582239.js";import{m as e}from"./animation-fcb77ab4.js";const d=(s,r)=>function(){return i(e.section,{variants:o(),initial:"hidden",whileInView:"show",viewport:{once:!0,amount:.25},className:`${t.padding} max-w-7xl mx-auto relative z-0`,children:[a("span",{className:"hash-span",id:r,children:" "}),a(s,{})]})};export{d as S};
-//# sourceMappingURL=SectionWrapper-45af6e5d.js.map

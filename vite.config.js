@@ -3,6 +3,7 @@ import react from '@vitejs/plugin-react'
 
 export default defineConfig({
   plugins: [react()],
+  assetsInclude: ['**/*.zip'],
   build: {
     // Enable chunks and dynamic imports
     rollupOptions: {

@@ -68,9 +68,12 @@ import ramesh from "./ramesh.png";
 import sita from "./sita.png";
 import trishuli_report from "./trishuli_report.pdf";
 import rum_report from "./rum_report.pdf";
-
-import marsnepalsurvey from "./marsnepalsurvey.pdf"
-import isolated_footings from "./isolated_footings.pdf"
+import Literature_Review from "./Literature_Review.pdf";
+import Methodological_Framework from "./Methodological_Framework.pdf";
+import Data_Supporting_Material from "./Data_Supporting_Material.zip";
+import marsnepalsurvey from "./marsnepalsurvey.pdf";
+import isolated_footings from "./isolated_footings.pdf";
+import Urban_Hydrological_Nepal_Europe from "./Urban_Hydrological_Nepal_Europe.pdf";
 
 export {
   logo,
@@ -143,4 +146,8 @@ export {
   sita, 
   trishuli_report,
   rum_report,
+  Literature_Review,
+  Methodological_Framework,
+  Data_Supporting_Material,
+  Urban_Hydrological_Nepal_Europe,
 };
