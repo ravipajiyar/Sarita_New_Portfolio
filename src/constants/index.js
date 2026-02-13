@@ -86,10 +86,10 @@ export const navLinks = [
     id: "works",
     title: "Projects",
   },
-  {
-    id: "murcs",
-    title: "MUrCS Project",
-  },
+  // {
+  //   id: "murcs",
+  //   title: "MUrCS Project",
+  // },
   {
     id: "skills",
     title: "Skills",
