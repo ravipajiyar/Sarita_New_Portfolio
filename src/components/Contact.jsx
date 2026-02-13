@@ -1,5 +1,6 @@
 import React, { useRef, useState } from "react";
 import { motion } from "framer-motion";
+import emailjs from "@emailjs/browser";
 import {
   FaPhoneAlt,
   FaEnvelope,
@@ -19,20 +20,44 @@ const Contact = () => {
     message: "",
   });
   const [loading, setLoading] = useState(false);
+  const [sent, setSent] = useState(false);
+
+  // EmailJS credentials
+  const SERVICE_ID = "service_posjvc8";
+  const TEMPLATE_ID = "template_4fh1s8p";
+  const PUBLIC_KEY = "4QT5AsyhqhyUDhp7w";
 
   const handleChange = (e) => {
     const { name, value } = e.target;
     setForm({ ...form, [name]: value });
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    setLoading(true);
+    
+    console.log("=== FORM SUBMISSION STARTED ===");
+    console.log("Form data:", form);
+    
+    if (!form.name.trim() || !form.email.trim() || !form.message.trim()) {
+      alert("Please fill in all fields");
+      return;
+    }
 
-    emailjs
-      .send(
-        import.meta.env.VITE_APP_EMAILJS_SERVICE_ID,
-        import.meta.env.VITE_APP_EMAILJS_TEMPLATE_ID,
+    setLoading(true);
+    console.log("Loading state set to true");
+
+    try {
+      console.log("Sending email with:");
+      console.log("- Service ID:", SERVICE_ID);
+      console.log("- Template ID:", TEMPLATE_ID);
+      console.log("- Public Key:", PUBLIC_KEY);
+      console.log("- From Name:", form.name);
+      console.log("- From Email:", form.email);
+      console.log("- To Email: sarita99444@gmail.com");
+
+      const response = await emailjs.send(
+        SERVICE_ID,
+        TEMPLATE_ID,
         {
           from_name: form.name,
           to_name: "Sarita",
@@ -40,20 +65,26 @@ const Contact = () => {
           to_email: "sarita99444@gmail.com",
           message: form.message,
         },
-        import.meta.env.VITE_APP_EMAILJS_PUBLIC_KEY
-      )
-      .then(
-        () => {
-          setLoading(false);
-          alert("Thank you. I will get back to you as soon as possible.");
-          setForm({ name: "", email: "", message: "" });
-        },
-        (error) => {
-          setLoading(false);
-          console.error(error);
-          alert("Something went wrong. Please try again.");
-        }
+        PUBLIC_KEY
       );
+
+      console.log("✅ Email sent successfully!");
+      console.log("Response:", response);
+      
+      setLoading(false);
+      setSent(true);
+      alert("✅ Thank you! Your message has been sent successfully to sarita99444@gmail.com. I will get back to you as soon as possible.");
+      setForm({ name: "", email: "", message: "" });
+      
+      setTimeout(() => {
+        setSent(false);
+      }, 3000);
+    } catch (error) {
+      console.error("❌ Email sending failed!");
+      console.error("Error details:", error);
+      setLoading(false);
+      alert(`❌ Error sending email: ${error.text || error.message || "Unknown error occurred"}`);
+    }
   };
 
   return (
@@ -81,6 +112,7 @@ const Contact = () => {
                 onChange={handleChange}
                 placeholder="What's your good name?"
                 className="bg-tertiary py-4 px-6 placeholder:text-secondary text-white rounded-lg outline-none border-none font-medium"
+                required
               />
             </label>
             <label className="flex flex-col">
@@ -92,6 +124,7 @@ const Contact = () => {
                 onChange={handleChange}
                 placeholder="What's your email address?"
                 className="bg-tertiary py-4 px-6 placeholder:text-secondary text-white rounded-lg outline-none border-none font-medium"
+                required
               />
             </label>
             <label className="flex flex-col">
@@ -103,14 +136,40 @@ const Contact = () => {
                 onChange={handleChange}
                 placeholder="What you want to say?"
                 className="bg-tertiary py-4 px-6 placeholder:text-secondary text-white rounded-lg outline-none border-none font-medium"
+                required
               />
             </label>
 
             <button
               type="submit"
-              className="bg-tertiary py-3 px-8 rounded-xl outline-none w-full text-white font-bold shadow-md shadow-primary hover:bg-tertiary/90 transition-colors"
+              disabled={loading}
+              className={`py-3 px-8 rounded-xl outline-none w-full text-white font-bold shadow-md transition-all duration-300 flex items-center justify-center gap-2 text-lg ${
+                sent
+                  ? "bg-green-500 shadow-green-500/50 hover:bg-green-600"
+                  : loading
+                  ? "bg-yellow-500 shadow-yellow-500/50 cursor-not-allowed hover:bg-yellow-600"
+                  : "bg-tertiary hover:bg-tertiary/90 shadow-primary hover:shadow-lg"
+              }`}
             >
-              {loading ? "Sending..." : "Send"}
+              {sent ? (
+                <>
+                  <span>✓</span>
+                  <span>Sent Successfully!</span>
+                </>
+              ) : loading ? (
+                <>
+                  <motion.span
+                    animate={{ rotate: 360 }}
+                    transition={{ repeat: Infinity, duration: 1, linear: true }}
+                    style={{ display: "inline-block" }}
+                  >
+                    ⏳
+                  </motion.span>
+                  <span>Sending...</span>
+                </>
+              ) : (
+                "Send Message"
+              )}
             </button>
           </form>
         </motion.div>

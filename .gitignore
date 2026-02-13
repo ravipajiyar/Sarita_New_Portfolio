@@ -1,1 +1,8 @@
 node_modules
+
+# Vite build files
+dist
+.vite
+
+# environment files
+.env.local

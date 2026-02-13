@@ -97,7 +97,7 @@ const App = () => {
                 <Tech />
                 <Works />
                 <Graduation />
-                <MUrCS />
+                {/* <MUrCS /> */}
                 <Certificates />
                 <HireMe />
                 <Feedbacks />

@@ -1,7 +1,11 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
+import emailjs from "@emailjs/browser";
 import App from "./App";
 import "./index.css";
+
+// Initialize EmailJS
+emailjs.init(import.meta.env.VITE_APP_EMAILJS_PUBLIC_KEY);
 
 // Scroll restoration component
 const ScrollToTop = () => {
