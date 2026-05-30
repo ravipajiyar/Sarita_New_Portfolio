@@ -9,6 +9,7 @@ import {
   FaLinkedin,
   FaFacebook,
   FaTwitter,
+  FaInstagram,
 } from "react-icons/fa";
 
 const Hero = () => {
@@ -258,6 +259,11 @@ const socialLinks = [
     name: "Twitter",
     url: "https://twitter.com/Sarita99444",
     icon: FaTwitter,
+  },
+  {
+    name: "Instagram",
+    url: "https://www.instagram.com/sarita_sapkotaa/",
+    icon: FaInstagram,
   },
 ];
 

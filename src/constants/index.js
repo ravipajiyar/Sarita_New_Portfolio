@@ -179,8 +179,119 @@ const technologies = [
   },
 ];
 
-const experiences = [
+// const experiences = [
  
+//   {
+//     title: "Researcher - SHM",
+//     company_name: "Kathmandu University",
+//     icon: analysis,
+//     iconBg: "#383E56",
+//     date: "Apr 2025 - Jul 2025",
+//     points: [
+//       "Conducted research on Multi Scale Deep Learning for Hairline Crack Detection with Ravi Kumar Pajiyar under Prof. Dr. Sudan Jha's supervision.",
+//       "Developed a hybrid CNN-Transformer model for accurate hairline crack detection in concrete structures.",
+//       "Collaborated with the Department of Computer Engineering for structural health monitoring applications.",
+//       "Research paper submitted for publication, focusing on multiscale feature extraction and global context understanding.",
+//     ],
+//   },
+//   {
+//     title: "Junior Officer - Civil Engineer (Level-7)",
+//     company_name: "Civil Engineering Organization",
+//     icon: building,
+//     iconBg: "#E6DEDD",
+//     date: "Dec 2025 - Present",
+//     points: [
+//       "Study, design, and prepare project drawings for feasibility studies and projects under construction.",
+//       "Prepare engineering designs, drawings, BOQs, and detailed cost estimations.",
+//       "Conduct rate analysis, quantity estimations, and cost-benefit analyses.",
+//       "Participate in feasibility studies and site investigations under senior engineers.",
+//       "Perform site visits, data collection, and supervision of construction projects.",
+//       "Prepare technical reports, site visit reports, and project documentation.",
+//       "Execute tasks and assignments as delegated by management.",
+//       "Maintain equipment and ensure professional work standards.",
+//     ],
+//   },
+//   {
+//     title: "Internship Trainee",
+//     company_name: "TODA Corporation, Japan-Oriented Construction",
+//     icon: building,
+//     iconBg: "#E6DEDD",
+//     date: "Jun 2025 - Aug 2025",
+//     points: [
+//       "Participated in specialized training program for engineers and supervisors.",
+//       "Engaged in live-site construction work and drawing analysis.",
+//       "Supervised construction sites and learned Japanese construction practices.",
+//       "Gained hands-on experience in international construction methodologies.",
+//     ],
+//   },
+  
+//   {
+//     title: "Internship Trainee",
+//     company_name: "Kabeli A Hydropower Project (37.6 MW)",
+//     icon: project,
+//     iconBg: "#383E56",
+//     date: "Feb 2025 - Apr 2025",
+//     points: [
+//       "Worked on quality checks and reinforcement work for the run-of-river hydropower project.",
+//       "Conducted concrete testing and analysis procedures.",
+//       "Assisted in drawing analysis and BOQ preparation.",
+//       "Prepared detailed technical reports and documentation.",
+//     ],
+//   },
+//   {
+//     title: "Media Head",
+//     company_name: "KU Youth Red Cross Circle",
+//     icon: design,
+//     iconBg: "#E6DEDD",
+//     date: "Nov 2024 - Apr 2025",
+//     points: [
+//       "Led social media management and content creation campaigns.",
+//       "Designed promotional materials and documented events.",
+//       "Supported website development at https://yrcc.ku.edu.np/",
+//       "Enhanced overall digital presence and engagement strategies.",
+//     ],
+//   },
+//   {
+//     title: "Executive Member",
+//     company_name: "Indoor Club, Kathmandu University",
+//     icon: project,
+//     iconBg: "#383E56",
+//     date: "Mar 2024 - Oct 2025",
+//     points: [
+//       "Organized skill-based workshops and inter-departmental tournaments.",
+//       "Coordinated table tennis, badminton, and chess events.",
+//       "Facilitated leadership initiatives and event management.",
+//       "Enhanced student engagement and promoted healthy campus lifestyle.",
+//     ],
+//   },
+//   {
+//     title: "Remote Sanitation Volunteer",
+//     company_name: "EWB Nepal, KU Chapter",
+//     icon: analysis,
+//     iconBg: "#E6DEDD",
+//     date: "Dec 2023 - Mar 2024",
+//     points: [
+//       "Conducted field data collection and infiltration rate testing using Single Ring Infiltrometer.",
+//       "Assessed design flaws and sanitation challenges in rural school infrastructure.",
+//       "Proposed improvement strategies for existing toilet facilities.",
+//       "Supported septic system planning and implementation.",
+//     ],
+//   },
+//   {
+//     title: "General Member",
+//     company_name: "KU Civil Engineering Club",
+//     icon: design,
+//     iconBg: "#383E56",
+//     date: "Mar 2021 - Mar 2024",
+//     points: [
+//       "Organized technical talk shows, treasure hunts, and table tennis tournaments.",
+//       "Actively volunteered in various club events and initiatives.",
+//       "Attended workshops on municipal drawing and water supply systems.",
+//       "Enhanced practical skills through technical training programs.",
+//     ],
+//   },
+// ];
+const experiences = [
   {
     title: "Researcher - SHM",
     company_name: "Kathmandu University",
@@ -195,20 +306,34 @@ const experiences = [
     ],
   },
   {
+    title: "Construction Analyst",
+    company_name: "CloudFactory",
+    icon: construction,
+    iconBg: "#383E56",
+    date: "May 2025 - Present",
+    points: [
+      "Reviewing site walkthrough videos and images, verifying construction progress against project plans and schedules using digital tools and BIM-based systems.",
+      "Ensuring high data quality through annotation checks, progress validation, and identifying inconsistencies or gaps in project execution.",
+      "Conducting project-level quality reviews, documenting issues, and suggesting improvements to enhance workflow accuracy and efficiency.",
+      "Monitoring and resolving support tickets to ensure timely client issue resolution and reduce recurring problems.",
+      "Collaborating closely with operations and quality teams to maintain data accuracy and support reliable project delivery.",
+    ],
+  },
+  {
     title: "Junior Officer - Civil Engineer (Level-7)",
-    company_name: "Civil Engineering Organization",
+    company_name: "Sanima Bank / Civil Engineering Organization",
     icon: building,
     iconBg: "#E6DEDD",
-    date: "Dec 2025 - Present",
+    date: "Dec 2024 - Apr 2025",
     points: [
-      "Study, design, and prepare project drawings for feasibility studies and projects under construction.",
-      "Prepare engineering designs, drawings, BOQs, and detailed cost estimations.",
-      "Conduct rate analysis, quantity estimations, and cost-benefit analyses.",
-      "Participate in feasibility studies and site investigations under senior engineers.",
-      "Perform site visits, data collection, and supervision of construction projects.",
-      "Prepare technical reports, site visit reports, and project documentation.",
-      "Execute tasks and assignments as delegated by management.",
-      "Maintain equipment and ensure professional work standards.",
+      "Studied, designed, and prepared project drawings for feasibility studies and projects under construction.",
+      "Prepared engineering designs, drawings, BOQs, and detailed cost estimations.",
+      "Conducted rate analysis, quantity estimations, and cost-benefit analyses.",
+      "Participated in feasibility studies and site investigations under senior engineers.",
+      "Performed site visits, data collection, and supervision of construction projects.",
+      "Prepared technical reports, site visit reports, and project documentation.",
+      "Executed tasks and assignments as delegated by management.",
+      "Maintained equipment and ensured professional work standards.",
     ],
   },
   {
@@ -224,7 +349,6 @@ const experiences = [
       "Gained hands-on experience in international construction methodologies.",
     ],
   },
-  
   {
     title: "Internship Trainee",
     company_name: "Kabeli A Hydropower Project (37.6 MW)",
@@ -291,7 +415,6 @@ const experiences = [
     ],
   },
 ];
-
 const testimonials = [
   {
     testimonial:
