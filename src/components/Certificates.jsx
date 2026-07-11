@@ -15,7 +15,7 @@ const CertificateCard = ({
   description,
   icon
 }) => (
-  <Tilt className="xs:w-[300px] w-full">
+  <Tilt className="xs:w-[300px] w-full flex-shrink-0">
     <motion.div
       variants={fadeIn("up", "spring", 0.5, 0.75)}
       className="bg-black-100 p-6 rounded-2xl shadow-card relative min-h-[280px]"
@@ -74,7 +74,7 @@ const CertificateSection = ({ title, certificates, currentIndex, onNext, onPrev,
         )}
 
         {/* Certificates Container */}
-        <div className="overflow-hidden mx-12">
+        <div className="overflow-x-auto sm:overflow-hidden mx-2 sm:mx-12 scrollbar-hide">
           <div
             className="flex transition-transform duration-700 ease-in-out"
             style={{ transform: `translateX(-${currentIndex * 100}%)` }}

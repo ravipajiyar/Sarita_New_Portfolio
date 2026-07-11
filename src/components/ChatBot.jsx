@@ -66,7 +66,7 @@ const ChatBot = () => {
       {/* Chat Toggle Button */}
       <motion.button
         onClick={() => setIsOpen(!isOpen)}
-        className="fixed bottom-5 right-5 bg-[#915EFF] text-white p-4 rounded-full shadow-lg hover:bg-[#7140d1] transition-colors z-50"
+        className="fixed bottom-4 right-4 sm:bottom-5 sm:right-5 bg-[#915EFF] text-white p-3 sm:p-4 rounded-full shadow-lg hover:bg-[#7140d1] transition-colors z-50"
         whileHover={{ scale: 1.1 }}
         whileTap={{ scale: 0.9 }}
       >
@@ -80,19 +80,19 @@ const ChatBot = () => {
         initial={{ opacity: 0, y: 100 }}
         animate={{ opacity: isOpen ? 1 : 0, y: isOpen ? 0 : 100 }}
         transition={{ duration: 0.3 }}
-        className={`fixed bottom-20 right-5 w-96 h-[500px] bg-[#1A1A1A] rounded-2xl shadow-2xl overflow-hidden z-40 ${!isOpen && 'pointer-events-none'}`}
+        className={`fixed bottom-20 right-2 sm:right-5 w-[calc(100vw-1rem)] sm:w-96 h-[70vh] sm:h-[500px] bg-[#1A1A1A] rounded-2xl shadow-2xl overflow-hidden z-40 ${!isOpen && 'pointer-events-none'}`}
       >
         {/* Header */}
-        <div className="bg-[#915EFF] p-4 flex justify-between items-center">
+        <div className="bg-[#915EFF] p-3 sm:p-4 flex justify-between items-center">
           <div className="flex items-center space-x-3">
-            <div className="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center">
+            <div className="w-8 h-8 sm:w-10 sm:h-10 rounded-full bg-white/10 flex items-center justify-center">
               <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9.75 3.104v5.714a2.25 2.25 0 01-.659 1.591L5 14.5M9.75 3.104c-.251.023-.501.05-.75.082m.75-.082a24.301 24.301 0 014.5 0m0 0v5.714c0 .597.237 1.17.659 1.591L19.8 15.3M14.25 3.104c.251.023.501.05.75.082M19.8 15.3l-1.57.393A9.065 9.065 0 0112 15a9.065 9.065 0 00-6.23-.693L5 14.5m14.8.8l1.402 1.402c1.232 1.232.65 3.318-1.067 3.611A48.309 48.309 0 0112 21c-2.773 0-5.491-.235-8.135-.687-1.718-.293-2.3-2.379-1.067-3.611L5 14.5" />
               </svg>
             </div>
             <div>
-              <h3 className="text-white font-medium">Ask about Sarita</h3>
-              <p className="text-white/70 text-sm">AI Assistant</p>
+              <h3 className="text-white font-medium text-sm sm:text-base">Ask about Sarita</h3>
+              <p className="text-white/70 text-xs sm:text-sm">AI Assistant</p>
             </div>
           </div>
           <button 
@@ -106,7 +106,7 @@ const ChatBot = () => {
         </div>
 
         {/* Messages Area */}
-        <div className="p-4 h-[380px] overflow-y-auto custom-scrollbar space-y-4">
+        <div className="p-3 sm:p-4 h-[calc(70vh-140px)] sm:h-[380px] overflow-y-auto custom-scrollbar space-y-4">
           {messages.map((message, index) => (
             <motion.div
               key={index}
@@ -115,12 +115,12 @@ const ChatBot = () => {
               transition={{ duration: 0.3, delay: index * 0.1 }}
               className={`flex ${message.isBot ? 'justify-start' : 'justify-end'}`}
             >
-              <div className={`max-w-[80%] p-3 rounded-2xl ${
+              <div className={`max-w-[85%] sm:max-w-[80%] p-2.5 sm:p-3 rounded-2xl ${
                 message.isBot 
                   ? 'bg-[#2A2A2A] text-white rounded-tl-none' 
                   : 'bg-[#915EFF] text-white rounded-tr-none'
               }`}>
-                {message.text}
+                <span className="text-xs sm:text-sm">{message.text}</span>
               </div>
             </motion.div>
           ))}
@@ -128,7 +128,7 @@ const ChatBot = () => {
         </div>
 
         {/* Input Area */}
-        <div className="absolute bottom-0 left-0 right-0 p-4 bg-[#2A2A2A]">
+        <div className="absolute bottom-0 left-0 right-0 p-3 sm:p-4 bg-[#2A2A2A]">
           <form className="flex space-x-2" onSubmit={(e) => {
             e.preventDefault();
             const input = e.target.elements.message;
@@ -146,7 +146,7 @@ const ChatBot = () => {
               type="text"
               name="message"
               placeholder="Type your message..."
-              className="flex-1 bg-[#1A1A1A] text-white rounded-full px-4 py-2 focus:outline-none focus:ring-2 focus:ring-[#915EFF]"
+              className="flex-1 bg-[#1A1A1A] text-white rounded-full px-3 sm:px-4 py-2 focus:outline-none focus:ring-2 focus:ring-[#915EFF] text-sm"
             />
             <button
               type="submit"

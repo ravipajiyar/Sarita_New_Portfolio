@@ -47,8 +47,8 @@ const Tech = () => {
         <div className="mt-10">
             {/* Technical Expertise Section */}
             <div className="text-center mb-10">
-                <h2 className={`${styles.sectionHeadText} text-center mb-2`}>Technical Expertise</h2>
-                <p className="text-secondary text-[16px] font-medium">Comprehensive skillset in civil engineering and design</p>
+                <h2 className={`${styles.sectionHeadText} text-center mb-2 text-[20px] sm:text-[30px] md:text-[40px]`}>Technical Expertise</h2>
+                <p className="text-secondary text-[13px] sm:text-[16px] font-medium">Comprehensive skillset in civil engineering and design</p>
             </div>
 
             {/* Skills Slider Section */}
@@ -62,14 +62,14 @@ const Tech = () => {
                     {skillGroup.map((group, groupIndex) => (
                       <div
                         key={groupIndex}
-                        className="w-full sm:w-[380px] bg-black-100/80 backdrop-blur-sm p-8 rounded-2xl" // Changed width here to 380px and padding to 8
+                        className="w-full sm:w-[380px] bg-black-100/80 backdrop-blur-sm p-4 sm:p-8 rounded-2xl" // Changed width here to 380px and padding to 8
                       >
-                         <h4 className="text-white text-[20px] font-bold mb-4">{group.title}</h4>
+                         <h4 className="text-white text-[16px] sm:text-[20px] font-bold mb-3 sm:mb-4">{group.title}</h4>
                          {group.skills.map((skill, skillIndex) => (
                              <div key={skillIndex} className="mb-4">
                                 <div className="flex justify-between items-center mb-1">
-                                 <p className="text-secondary text-sm font-medium">{skill.name}</p>
-                                <p className="text-secondary text-sm font-medium">{skill.level}%</p>
+                                 <p className="text-secondary text-xs sm:text-sm font-medium">{skill.name}</p>
+                                <p className="text-secondary text-xs sm:text-sm font-medium">{skill.level}%</p>
                                 </div>
                                  <div className="w-full bg-black-200 h-2 rounded-full">
                                    <div className="bg-gradient-to-r from-purple-500 to-pink-500 h-full rounded-full" style={{ width: `${skill.level}%` }} />
@@ -99,9 +99,9 @@ const Tech = () => {
             </div>
 
             {/* Existing Technology Icons */}
-            <div className='mt-20 flex flex-row flex-wrap justify-center gap-10'>
+            <div className='mt-10 sm:mt-20 flex flex-row flex-wrap justify-center gap-6 sm:gap-10'>
                 {technologies.map((technology) => (
-                    <div className='w-28 h-28' key={technology.name}>
+                    <div className='w-20 h-20 sm:w-28 sm:h-28' key={technology.name}>
                         <BallCanvas icon={technology.icon} />
                     </div>
                 ))}

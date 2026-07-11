@@ -22,7 +22,7 @@ const ServiceCard = ({ index, title, icon }) => (
           scale: 1,
           speed: 450,
         }}
-        className="bg-tertiary rounded-[20px] py-5 px-12 min-h-[280px] flex justify-evenly items-center flex-col"
+        className="bg-tertiary rounded-[20px] py-5 px-6 sm:px-12 min-h-[240px] sm:min-h-[280px] flex justify-evenly items-center flex-col"
       >
         <img
           src={icon}
@@ -50,13 +50,13 @@ const About = () => {
         <div className="flex flex-col w-full xl:w-[50%]">
           <motion.p
             variants={fadeIn("", "", 0.1, 1)}
-            className="text-secondary text-[17px] leading-[30px]"
+            className="text-secondary text-[15px] sm:text-[17px] leading-[26px] sm:leading-[30px]"
           >
-            A recent Civil Engineering graduate from Kathmandu University passionate about structural engineering and technology-driven structural health monitoring. Experienced in hydropower design, hydraulic modeling, and geospatial analysis, with hands-on fieldwork and deep learning research for crack detection. Committed to advancing resilient and sustainable infrastructure solutions.
+            A recent Civil Engineering graduate from Kathmandu University, passionate about structural engineering and technology-driven Structural Health Monitoring. First author of a CIEES 2025 conference paper introducing CrackFormer, a hybrid CNN–Transformer model for detecting hairline cracks in concrete structures — led from concept through field validation to publication. Experienced in hydropower design, hydraulic modeling, geospatial analysis, and deep learning-based crack detection, with hands-on fieldwork across Nepal. Committed to advancing resilient and sustainable infrastructure through the intersection of engineering judgment and AI.
           </motion.p>
 
           {/* Buttons Section */}
-          <div className="mt-20 flex justify-start gap-8">
+          <div className="mt-12 sm:mt-20 flex justify-start gap-4 sm:gap-8 flex-wrap">
             <motion.a
               href={sarita_sapkota}
               download
@@ -66,6 +66,8 @@ const About = () => {
             >
               Download Resume
             </motion.a>
+            {/* Digital Resume - Commented out for now */}
+            {/*
             <motion.a
               href="https://saritadigitalresume.vercel.app/"
               target="_blank"
@@ -92,6 +94,7 @@ const About = () => {
                 />
               </svg>
             </motion.a>
+            */}
           </div>
         </div>
 
@@ -99,10 +102,10 @@ const About = () => {
         <div className="flex flex-col gap-4 w-full xl:w-[48%]">
          <motion.div
                 variants={fadeIn("up", "spring",  0.5, 0.75)}
-                className="bg-black-100/80 backdrop-blur-sm p-8 rounded-2xl w-full"
+                className="bg-black-100/80 backdrop-blur-sm p-5 sm:p-8 rounded-2xl w-full"
           >
-            <h3 className="text-white text-[24px] font-bold mb-4">Education</h3>
-            <div className="text-secondary text-[16px]">
+            <h3 className="text-white text-[20px] sm:text-[24px] font-bold mb-3 sm:mb-4">Education</h3>
+            <div className="text-secondary text-[14px] sm:text-[16px]">
               <p><span className="text-white font-bold">Kathmandu University</span></p>
               <p>B.E. Civil Engineering</p>
               <p>2021 - 2025</p>
@@ -111,10 +114,10 @@ const About = () => {
 
            <motion.div
                 variants={fadeIn("up", "spring",  0.5, 0.75)}
-                className="bg-black-100/80 backdrop-blur-sm p-8 rounded-2xl w-full"
+                className="bg-black-100/80 backdrop-blur-sm p-5 sm:p-8 rounded-2xl w-full"
               >
-                <h3 className="text-white text-[24px] font-bold mb-4">Core Competencies</h3>
-                <ul className="list-disc text-secondary text-[16px] pl-5">
+                <h3 className="text-white text-[20px] sm:text-[24px] font-bold mb-3 sm:mb-4">Core Competencies</h3>
+                <ul className="list-disc text-secondary text-[14px] sm:text-[16px] pl-5">
                   <li>AutoCAD Design</li>
                   <li>Project Management</li>
                   <li>Structural Analysis</li>
@@ -125,7 +128,7 @@ const About = () => {
       </div>
 
       {/* Services Cards */}
-      <div className="mt-20 flex flex-wrap gap-10">
+      <div className="mt-12 sm:mt-20 flex flex-wrap gap-6 sm:gap-10 justify-center">
         {services.map((service, index) => (
           <ServiceCard key={service.title} index={index} {...service} />
         ))}

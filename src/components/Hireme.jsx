@@ -30,8 +30,8 @@ const HireMe = () => {
 
   return (
     <div id="hireme" className="w-full min-h-screen">
-      <div className="max-w-7xl mx-auto px-6 py-12">
-        <h2 className="text-4xl font-bold text-center text-white mb-16">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 py-8 sm:py-12">
+        <h2 className="text-2xl sm:text-4xl font-bold text-center text-white mb-8 sm:mb-16">
           Let's Build Something Amazing
         </h2>
 
@@ -44,9 +44,9 @@ const HireMe = () => {
             {/* Services Section */}
             <motion.div
                  variants={fadeIn("left", "tween", 0.3, 1)}
-                className="bg-black-100/90 p-8 rounded-xl"
+                className="bg-black-100/90 p-6 sm:p-8 rounded-xl"
               >
-              <h3 className="text-2xl font-bold text-white mb-6">Services I Offer</h3>
+              <h3 className="text-xl sm:text-2xl font-bold text-white mb-6">Services I Offer</h3>
               <div className="space-y-6">
                 {services.map((service, index) => (
                   <div key={index} className="flex items-start gap-4">
@@ -73,9 +73,9 @@ const HireMe = () => {
             {/* Why Work With Me Section */}
             <motion.div
                 variants={fadeIn("left", "tween", 0.3, 1)}
-               className="bg-black-100/90 p-8 rounded-xl"
+               className="bg-black-100/90 p-6 sm:p-8 rounded-xl"
               >
-              <h3 className="text-2xl font-bold text-white mb-6">Why Work With Me?</h3>
+              <h3 className="text-xl sm:text-2xl font-bold text-white mb-6">Why Work With Me?</h3>
               <div className="space-y-4">
                 {[
                   "Proven track record in project delivery",
@@ -99,7 +99,7 @@ const HireMe = () => {
           {/* Right Section - Contact Form */}
           <motion.div
                variants={fadeIn("up", "tween", 0.2, 1)}
-                className="bg-black-100/90 p-8 rounded-xl"
+                className="bg-black-100/90 p-6 sm:p-8 rounded-xl"
                 >
             <form ref={formRef} onSubmit={handleSubmit} className="space-y-6">
               <div className="space-y-2">
@@ -109,7 +109,7 @@ const HireMe = () => {
                   name="name"
                   value={form.name}
                   onChange={handleChange}
-                  className="w-full bg-tertiary/50 rounded-lg p-4 text-white outline-none"
+                  className="w-full bg-tertiary/50 rounded-lg p-3 sm:p-4 text-white outline-none text-sm sm:text-base"
                   placeholder="Enter your name"
                 />
               </div>
@@ -121,7 +121,7 @@ const HireMe = () => {
                   name="email"
                   value={form.email}
                   onChange={handleChange}
-                  className="w-full bg-tertiary/50 rounded-lg p-4 text-white outline-none"
+                  className="w-full bg-tertiary/50 rounded-lg p-3 sm:p-4 text-white outline-none text-sm sm:text-base"
                   placeholder="Enter your email"
                 />
               </div>
@@ -132,7 +132,7 @@ const HireMe = () => {
                   name="projectType"
                   value={form.projectType}
                   onChange={handleChange}
-                  className="w-full bg-tertiary/50 rounded-lg p-4 text-white outline-none"
+                  className="w-full bg-tertiary/50 rounded-lg p-3 sm:p-4 text-white outline-none text-sm sm:text-base"
                 >
                   <option>Civil Engineering Design</option>
                   <option>Hydraulic Analysis</option>
@@ -147,7 +147,7 @@ const HireMe = () => {
                   value={form.projectDetails}
                   onChange={handleChange}
                   rows={4}
-                  className="w-full bg-tertiary/50 rounded-lg p-4 text-white outline-none"
+                  className="w-full bg-tertiary/50 rounded-lg p-3 sm:p-4 text-white outline-none text-sm sm:text-base"
                   placeholder="Describe your project"
                 />
               </div>
@@ -158,7 +158,7 @@ const HireMe = () => {
                   name="budget"
                   value={form.budget}
                   onChange={handleChange}
-                  className="w-full bg-tertiary/50 rounded-lg p-4 text-white outline-none"
+                  className="w-full bg-tertiary/50 rounded-lg p-3 sm:p-4 text-white outline-none text-sm sm:text-base"
                 >
                   <option>$200 - $500</option>
                   <option>$500 - $800</option>

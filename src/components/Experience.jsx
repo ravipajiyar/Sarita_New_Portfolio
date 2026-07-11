@@ -33,20 +33,20 @@ const ExperienceCard = ({ experience }) => {
       }
     >
       <div>
-        <h3 className='text-white text-[24px] font-bold'>{experience.title}</h3>
+        <h3 className='text-white text-[16px] sm:text-[24px] font-bold'>{experience.title}</h3>
         <p
-          className='text-secondary text-[16px] font-semibold'
+          className='text-secondary text-[12px] sm:text-[16px] font-semibold'
           style={{ margin: 0 }}
         >
           {experience.company_name}
         </p>
       </div>
 
-      <ul className='mt-5 list-disc ml-5 space-y-2'>
+      <ul className='mt-3 sm:mt-5 list-disc ml-5 space-y-1.5 sm:space-y-2'>
         {experience.points.map((point, index) => (
           <li
             key={`experience-point-${index}`}
-            className='text-white-100 text-[14px] pl-1 tracking-wider'
+            className='text-white-100 text-[11px] sm:text-[14px] pl-1 tracking-wider'
           >
             {point}
           </li>
@@ -58,15 +58,15 @@ const ExperienceCard = ({ experience }) => {
 
 const Experience = () => {
   const researchExperiences = experiences.filter(exp => exp.title.includes("Researcher"));
-  const industrialExperiences = experiences.filter(exp => exp.title.includes("Internship") || exp.title.includes("Officer") || exp.title.includes("Analyst"));
+  const industrialExperiences = experiences.filter(exp => exp.title.includes("Internship") || exp.title.includes("Officer") || exp.title.includes("Analyst") || exp.title.includes("Engineer"));
   const clubExperiences = experiences.filter(exp => 
-    !exp.title.includes("Researcher") && !exp.title.includes("Internship") && !exp.title.includes("Officer") && !exp.title.includes("Analyst")
+    !exp.title.includes("Researcher") && !exp.title.includes("Internship") && !exp.title.includes("Officer") && !exp.title.includes("Analyst") && !exp.title.includes("Engineer")
   );
 
   // Create section divider component
   const SectionDivider = ({ title }) => (
     <div className="w-full text-center py-8">
-      <h3 className="text-white text-[24px] font-bold mb-4">{title}</h3>
+      <h3 className="text-white text-[18px] sm:text-[24px] font-bold mb-4">{title}</h3>
       <div className="w-24 h-1 bg-gradient-to-r from-purple-500 to-pink-500 mx-auto"></div>
     </div>
   );

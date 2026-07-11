@@ -276,6 +276,15 @@
   }
 }
 
+/* Hide scrollbar utility */
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;
+}
+.scrollbar-hide {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
 /* Aspect ratio container for project images */
 .aspect-w-16 {
   position: relative;
@@ -359,4 +368,80 @@
 
 .optimized-image:hover {
   transform: scale(1.02);
+}
+
+/* Mobile-specific responsive utilities */
+@media only screen and (max-width: 640px) {
+  /* Reduce padding on mobile */
+  .sm\\:px-16 {
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+  
+  /* Ensure proper spacing on mobile */
+  .mt-20 {
+    margin-top: 3rem;
+  }
+  
+  /* Fix overflow on small screens */
+  .overflow-hidden {
+    overflow: hidden;
+  }
+  
+  /* Ensure text doesn't overflow on mobile */
+  .text-overflow-ellipsis {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+}
+
+/* Responsive font sizes */
+@media only screen and (max-width: 640px) {
+  .section-head-text {
+    font-size: 1.875rem;
+  }
+  
+  .section-sub-text {
+    font-size: 0.875rem;
+  }
+}
+
+/* Mobile touch improvements */
+@media only screen and (max-width: 640px) {
+  /* Increase touch targets */
+  button,
+  a,
+  [role="button"] {
+    min-height: 44px;
+    min-width: 44px;
+  }
+  
+  /* Improve form inputs on mobile */
+  input,
+  textarea,
+  select {
+    font-size: 16px; /* Prevents iOS zoom on focus */
+  }
+}
+
+/* Responsive container widths */
+@media only screen and (max-width: 640px) {
+  .max-w-7xl {
+    max-width: 100%;
+  }
+}
+
+/* Mobile-friendly animations */
+@media only screen and (max-width: 640px) {
+  /* Reduce motion for users who prefer it */
+  @media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+    }
+  }
 }

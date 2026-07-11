@@ -35,8 +35,6 @@ import {
   kuyrcc,
   kugic,
   kabeli,
-  certificate_python,
-  certificate_python2,
   hult_certificate,
   kabeli_certificate,
   autocad2d,
@@ -64,7 +62,6 @@ import {
   Finalyear_Report,
   Shyam,
   ramesh,
-  sita, 
   trishuli_report,
   rum_report,
   Literature_Review,
@@ -102,24 +99,24 @@ export const navLinks = [
     id: "contact",
     title: "Contact",
   },
-  {
-    id: "blog",
-    title: "Blog",
-    url: "https://blogsarita.vercel.app/"
-  }
+  // {
+  //   id: "blog",
+  //   title: "Blog",
+  //   url: "https://blogsarita.vercel.app/"
+  // }
 ];
 
 const services = [
   {
-    title: "Design Tools",
+    title: "CAD Tools",
     icon: autocad,
   },
   {
-    title: "Analysis Tools",
-    icon: analysis,
+    title: "Hydraulic & Water Resources",
+    icon: infrastructure,
   },
   {
-    title: "Survey Tools",
+    title: "Surveying & GIS",
     icon: survey,
   },
   {
@@ -142,6 +139,10 @@ const technologies = [
     icon: road,
   },
   {
+    name: "SketchUp",
+    icon: figma,
+  },
+  {
     name: "EPANET",
     icon: infrastructure,
   },
@@ -150,11 +151,11 @@ const technologies = [
     icon: bridge,
   },
   {
-    name: "SAP",
-    icon: building,
+    name: "Total Station",
+    icon: surveying,
   },
   {
-    name: "Total Station",
+    name: "GPS",
     icon: surveying,
   },
   {
@@ -166,16 +167,12 @@ const technologies = [
     icon: project,
   },
   {
-    name: "Git",
-    icon: git,
+    name: "Microsoft Office",
+    icon: web,
   },
   {
-    name: "ML",
-    icon: analysis,
-  },
-  {
-    name: "Construction",
-    icon: construction,
+    name: "Canva",
+    icon: design,
   },
 ];
 
@@ -299,67 +296,74 @@ const experiences = [
     iconBg: "#383E56",
     date: "Apr 2025 - Jul 2025",
     points: [
-      "Conducted research on Multi Scale Deep Learning for Hairline Crack Detection with Ravi Kumar Pajiyar under Prof. Dr. Sudan Jha's supervision.",
-      "Developed a hybrid CNN-Transformer model for accurate hairline crack detection in concrete structures.",
-      "Collaborated with the Department of Computer Engineering for structural health monitoring applications.",
+      "Multi Scale Deep Learning for Hairline Crack Detection and Analysis using Hybrid CNN and Transformer architecture.",
+      "Developed a hybrid CNN-Transformer model to automate structural crack detection and classification, aiming to improve predictive maintenance in civil infrastructure.",
+      "Conducted under the mentorship of Prof. Dr. Sudan Jha, in collaboration with Ravi Kumar Pajiyar.",
       "Research paper submitted for publication, focusing on multiscale feature extraction and global context understanding.",
     ],
   },
   {
+    title: "Undergraduate Thesis - Researcher",
+    company_name: "Kathmandu University",
+    icon: analysis,
+    iconBg: "#383E56",
+    date: "2024 - 2025",
+    points: [
+      "Potential Study of Medium Hydropower Project of Nepal: A Case Study of Kabeli-A HEP.",
+      "Conducted under the supervision of Dr. Shyam Sundar Khadka.",
+      "Analyzed the hydrological, hydraulic, and structural components of the Kabeli-A Hydroelectric Project.",
+      "Evaluated economic feasibility to optimize power generation potential.",
+    ],
+  },
+  {
     title: "Construction Analyst",
-    company_name: "CloudFactory",
+    company_name: "Cloud Factory",
     icon: construction,
     iconBg: "#383E56",
-    date: "May 2025 - Present",
+    date: "May 2026 - Present",
     points: [
-      "Reviewing site walkthrough videos and images, verifying construction progress against project plans and schedules using digital tools and BIM-based systems.",
-      "Ensuring high data quality through annotation checks, progress validation, and identifying inconsistencies or gaps in project execution.",
-      "Conducting project-level quality reviews, documenting issues, and suggesting improvements to enhance workflow accuracy and efficiency.",
-      "Monitoring and resolving support tickets to ensure timely client issue resolution and reduce recurring problems.",
-      "Collaborating closely with operations and quality teams to maintain data accuracy and support reliable project delivery.",
+      "Verify construction stages against project plans and schedules.",
+      "Quality-check construction data by applying standardized practices across global project workflows.",
+      "Conduct project-level quality reviews, documenting issues and suggesting improvements.",
+      "Collaborate with operations and quality teams to maintain data accuracy.",
     ],
   },
   {
-    title: "Junior Officer - Civil Engineer (Level-7)",
-    company_name: "Sanima Bank / Civil Engineering Organization",
+    title: "Junior Civil Engineer",
+    company_name: "Sanima Hydro and Engineering Pvt. Ltd",
     icon: building,
     iconBg: "#E6DEDD",
-    date: "Dec 2024 - Apr 2025",
+    date: "Dec 2025 - Apr 2026",
     points: [
-      "Studied, designed, and prepared project drawings for feasibility studies and projects under construction.",
-      "Prepared engineering designs, drawings, BOQs, and detailed cost estimations.",
-      "Conducted rate analysis, quantity estimations, and cost-benefit analyses.",
-      "Participated in feasibility studies and site investigations under senior engineers.",
-      "Performed site visits, data collection, and supervision of construction projects.",
-      "Prepared technical reports, site visit reports, and project documentation.",
-      "Executed tasks and assignments as delegated by management.",
-      "Maintained equipment and ensured professional work standards.",
+      "Assisted in project design, feasibility studies, and civil drawings.",
+      "Prepared BOQ, cost estimation, and rate analysis.",
+      "Supported site investigations and construction supervision.",
+      "Prepared technical documentation and reporting.",
     ],
   },
   {
     title: "Internship Trainee",
-    company_name: "TODA Corporation, Japan-Oriented Construction",
+    company_name: "TODA Corporation – Japan-Oriented Construction Training Program",
     icon: building,
     iconBg: "#E6DEDD",
-    date: "Jun 2025 - Aug 2025",
+    date: "Jun 2025 - Jul 2025",
     points: [
-      "Participated in specialized training program for engineers and supervisors.",
-      "Engaged in live-site construction work and drawing analysis.",
-      "Supervised construction sites and learned Japanese construction practices.",
+      "Participated in live-site supervision and drawing analysis under Japanese construction practices.",
       "Gained hands-on experience in international construction methodologies.",
+      "Observed and learned quality control processes aligned with Japanese standards.",
     ],
   },
   {
     title: "Internship Trainee",
-    company_name: "Kabeli A Hydropower Project (37.6 MW)",
+    company_name: "Kabeli A Hydropower Project",
     icon: project,
     iconBg: "#383E56",
     date: "Feb 2025 - Apr 2025",
     points: [
-      "Worked on quality checks and reinforcement work for the run-of-river hydropower project.",
-      "Conducted concrete testing and analysis procedures.",
-      "Assisted in drawing analysis and BOQ preparation.",
-      "Prepared detailed technical reports and documentation.",
+      "Assisted in quality checks and reinforcement work.",
+      "Conducted concrete testing and drawing analysis.",
+      "Prepared BOQ and project reporting.",
+      "Gained hands-on experience in hydropower construction.",
     ],
   },
   {
@@ -388,19 +392,19 @@ const experiences = [
       "Enhanced student engagement and promoted healthy campus lifestyle.",
     ],
   },
-  {
-    title: "Remote Sanitation Volunteer",
-    company_name: "EWB Nepal, KU Chapter",
-    icon: analysis,
-    iconBg: "#E6DEDD",
-    date: "Dec 2023 - Mar 2024",
-    points: [
-      "Conducted field data collection and infiltration rate testing using Single Ring Infiltrometer.",
-      "Assessed design flaws and sanitation challenges in rural school infrastructure.",
-      "Proposed improvement strategies for existing toilet facilities.",
-      "Supported septic system planning and implementation.",
-    ],
-  },
+  // {
+  //   title: "Remote Sanitation Volunteer",
+  //   company_name: "EWB Nepal, KU Chapter",
+  //   icon: analysis,
+  //   iconBg: "#E6DEDD",
+  //   date: "Dec 2023 - Mar 2024",
+  //   points: [
+  //     "Conducted field data collection and infiltration rate testing using Single Ring Infiltrometer.",
+  //     "Assessed design flaws and sanitation challenges in rural school infrastructure.",
+  //     "Proposed improvement strategies for existing toilet facilities.",
+  //     "Supported septic system planning and implementation.",
+  //   ],
+  // },
   {
     title: "General Member",
     company_name: "KU Civil Engineering Club",
@@ -433,11 +437,11 @@ const testimonials = [
     image: Shyam,
   },
   {
-    "testimonial": "Sarita's dedication, innovative problem-solving, and multidisciplinary expertise make me incredibly proud as her mother.",
-    "name": "Sita Sapkota",
-    "designation": "Businesswoman",
-    "company": "Self Employed",
-     "image": sita,
+    testimonial: "Sarita's dedication and technical expertise in construction analysis and quality assurance have been valuable contributions to our project workflows.",
+    name: "Sumit Thapa",
+    designation: "Project Manager",
+    company: "Kabeli-A Hydropower",
+    image: Shyam,
   },
 ];
 
@@ -554,6 +558,27 @@ const projects = [
     report: trishuli_report,
     source_code_link: "https://github.com/saritasapkota123/Trishuli-Hydropower-Topography-Model",
   },
+  {
+    name: "Soak Pit Tank for Greywater Management – Engineers Without Borders",
+    description:
+      "Conducted soil percolation (infiltration rate) testing and topographic surveys to design and implement a soak pit tank for sustainable greywater management at a landslide-impacted government school in Nepal, under Engineers Without Borders.",
+    tags: [
+      {
+        name: "water-management",
+        color: "blue-text-gradient",
+      },
+      {
+        name: "environmental-engineering",
+        color: "green-text-gradient",
+      },
+      {
+        name: "fieldwork",
+        color: "pink-text-gradient",
+      },
+    ],
+    image: footings,
+    source_code_link: "https://github.com/saritasapkota123",
+  },
 ];
 const certificates = [
   // Professional Development Certifications
@@ -612,20 +637,6 @@ const certificates = [
     year: "2024",
     downloadLink: remote_certificate,
     icon: gis
-  },
-  {
-    title: "Python Beginner Certification",
-    issuer: "DataCamp",
-    year: "2024",
-    downloadLink: certificate_python,
-    icon: datacamp
-  },
-  {
-    title: "Python Intermediate Certification",
-    issuer: "DataCamp",
-    year: "2024",
-    downloadLink: certificate_python2,
-    icon: datacamp
   },
   // Additional Certifications
   {
