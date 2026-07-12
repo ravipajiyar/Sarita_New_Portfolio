@@ -133,7 +133,7 @@ const Hero = () => {
                 transition={{ duration: 0.8, delay: 0.6 }}
                 className="text-secondary text-[11px] sm:text-sm md:text-base lg:text-lg xl:text-xl leading-relaxed mb-4 sm:mb-6 lg:mb-8 px-1 sm:px-2 lg:px-0"
               >
-                A licensed Civil Engineer and recent Kathmandu University graduate specializing in Hydropower, with a strong focus on structural engineering and AI-driven Structural Health Monitoring. First author of a hybrid CNN–Transformer research paper on hairline crack detection, presented at CIEES 2025. Experienced in hydropower design, hydraulic modeling, geospatial analysis, and field-validated deep learning for infrastructure assessment — committed to resilient, sustainable infrastructure.
+                A licensed Civil Engineer and Kathmandu University graduate specializing in Hydropower, with a strong focus on structural engineering, water resources, and infrastructure assessment. Experienced in hydropower design, hydraulic modeling, geospatial analysis, and structural analysis, with an interest in applying data-driven approaches to infrastructure monitoring - committed to resilient, sustainable infrastructure.
               </motion.p>
 
               {/* Call-to-Action Buttons */}

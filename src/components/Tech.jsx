@@ -69,7 +69,6 @@ const Tech = () => {
                              <div key={skillIndex} className="mb-4">
                                 <div className="flex justify-between items-center mb-1">
                                  <p className="text-secondary text-xs sm:text-sm font-medium">{skill.name}</p>
-                                <p className="text-secondary text-xs sm:text-sm font-medium">{skill.level}%</p>
                                 </div>
                                  <div className="w-full bg-black-200 h-2 rounded-full">
                                    <div className="bg-gradient-to-r from-purple-500 to-pink-500 h-full rounded-full" style={{ width: `${skill.level}%` }} />

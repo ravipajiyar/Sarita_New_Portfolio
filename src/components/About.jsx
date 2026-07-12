@@ -52,11 +52,13 @@ const About = () => {
             variants={fadeIn("", "", 0.1, 1)}
             className="text-secondary text-[15px] sm:text-[17px] leading-[26px] sm:leading-[30px]"
           >
-            A recent Civil Engineering graduate from Kathmandu University, passionate about structural engineering and technology-driven Structural Health Monitoring. First author of a CIEES 2025 conference paper introducing CrackFormer, a hybrid CNN–Transformer model for detecting hairline cracks in concrete structures — led from concept through field validation to publication. Experienced in hydropower design, hydraulic modeling, geospatial analysis, and deep learning-based crack detection, with hands-on fieldwork across Nepal. Committed to advancing resilient and sustainable infrastructure through the intersection of engineering judgment and AI.
+            A Civil Engineering graduate from Kathmandu University, specializing in Hydropower, with a strong focus on structural engineering, water resources, and infrastructure assessment. Experienced in hydropower design, hydraulic modeling, geospatial analysis, and structural analysis, with hands-on fieldwork across Nepal. Committed to advancing resilient and sustainable infrastructure through sound engineering judgment and a growing interest in data-driven approaches to infrastructure monitoring.
           </motion.p>
 
           {/* Buttons Section */}
           <div className="mt-12 sm:mt-20 flex justify-start gap-4 sm:gap-8 flex-wrap">
+            {/* Download Resume - Commented out for now */}
+            {/*
             <motion.a
               href={sarita_sapkota}
               download
@@ -66,6 +68,7 @@ const About = () => {
             >
               Download Resume
             </motion.a>
+            */}
             {/* Digital Resume - Commented out for now */}
             {/*
             <motion.a
@@ -121,7 +124,8 @@ const About = () => {
                   <li>AutoCAD Design</li>
                   <li>Project Management</li>
                   <li>Structural Analysis</li>
-                  <li>Hydraulic Engineering</li>
+                  <li>Hydraulic Design</li>
+                  <li>Water Resources Engineering</li>
                 </ul>
           </motion.div>
          </div>

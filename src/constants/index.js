@@ -296,10 +296,10 @@ const experiences = [
     iconBg: "#383E56",
     date: "Apr 2025 - Jul 2025",
     points: [
-      "Multi Scale Deep Learning for Hairline Crack Detection and Analysis using Hybrid CNN and Transformer architecture.",
-      "Developed a hybrid CNN-Transformer model to automate structural crack detection and classification, aiming to improve predictive maintenance in civil infrastructure.",
-      "Conducted under the mentorship of Prof. Dr. Sudan Jha, in collaboration with Ravi Kumar Pajiyar.",
-      "Research paper submitted for publication, focusing on multiscale feature extraction and global context understanding.",
+      "Led the civil engineering side of a multi-scale deep learning study for hairline crack detection, ensuring the research addressed real structural inspection and deterioration challenges.",
+      "Designed the engineering validation framework, linking model outputs to crack morphology, width, and propagation behavior rather than relying on computational metrics alone.",
+      "Directed field data collection across concrete structures in Nepal and conducted the literature review on conventional and AI-based crack detection methods.",
+      "Conducted under the mentorship of Prof. Dr. Sudan Jha, in collaboration with Ravi Kumar Pajiyar. Research paper ongoing, focusing on field-validated crack detection for structural health monitoring.",
     ],
   },
   {
@@ -310,9 +310,9 @@ const experiences = [
     date: "2024 - 2025",
     points: [
       "Potential Study of Medium Hydropower Project of Nepal: A Case Study of Kabeli-A HEP.",
-      "Conducted under the supervision of Dr. Shyam Sundar Khadka.",
-      "Analyzed the hydrological, hydraulic, and structural components of the Kabeli-A Hydroelectric Project.",
+      "Conducted under the supervision of Dr. Shyam Sundar Khadka, analyzing the hydrological, hydraulic, and structural components of the Kabeli-A Hydroelectric Project.",
       "Evaluated economic feasibility to optimize power generation potential.",
+      "Prepared detailed technical report covering feasibility analysis, design parameters, and project recommendations.",
     ],
   },
   {
@@ -466,7 +466,7 @@ const projects = [
     ],
     image: finalcover, // replace with actual imported image variable
     report: Finalyear_Report, // update if you have the file path
-    source_code_link: "https://github.com/saritasapkota123/FINAL-YEAR-MAJOR-PROJECT-",
+    source_code_link: "https://github.com/saritasapkota123/THESIS-Kabeli-Hydropower-Project",
   },
   
   {
@@ -558,27 +558,27 @@ const projects = [
     report: trishuli_report,
     source_code_link: "https://github.com/saritasapkota123/Trishuli-Hydropower-Topography-Model",
   },
-  {
-    name: "Soak Pit Tank for Greywater Management – Engineers Without Borders",
-    description:
-      "Conducted soil percolation (infiltration rate) testing and topographic surveys to design and implement a soak pit tank for sustainable greywater management at a landslide-impacted government school in Nepal, under Engineers Without Borders.",
-    tags: [
-      {
-        name: "water-management",
-        color: "blue-text-gradient",
-      },
-      {
-        name: "environmental-engineering",
-        color: "green-text-gradient",
-      },
-      {
-        name: "fieldwork",
-        color: "pink-text-gradient",
-      },
-    ],
-    image: footings,
-    source_code_link: "https://github.com/saritasapkota123",
-  },
+  // {
+  //   name: "Soak Pit Tank for Greywater Management – Engineers Without Borders",
+  //   description:
+  //     "Conducted soil percolation (infiltration rate) testing and topographic surveys to design and implement a soak pit tank for sustainable greywater management at a landslide-impacted government school in Nepal, under Engineers Without Borders.",
+  //   tags: [
+  //     {
+  //       name: "water-management",
+  //       color: "blue-text-gradient",
+  //     },
+  //     {
+  //       name: "environmental-engineering",
+  //       color: "green-text-gradient",
+  //     },
+  //     {
+  //       name: "fieldwork",
+  //       color: "pink-text-gradient",
+  //     },
+  //   ],
+  //   image: footings,
+  //   source_code_link: "https://github.com/saritasapkota123",
+  // },
 ];
 const certificates = [
   // Professional Development Certifications
