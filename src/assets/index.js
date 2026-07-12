@@ -66,6 +66,7 @@ import Finalyear_Report from "./Finalyear_Report.pdf";
 import Shyam from "./Shyam.png";
 import ramesh from "./ramesh.png";
 import sita from "./sita.png";
+import sumit from "./sumit.jpeg";
 import trishuli_report from "./trishuli_report.pdf";
 import rum_report from "./rum_report.pdf";
 import Literature_Review from "./Literature_Review.pdf";
@@ -143,7 +144,8 @@ export {
   Finalyear_Report,
   Shyam,
   ramesh,
-  sita, 
+  sita,
+  sumit,
   trishuli_report,
   rum_report,
   Literature_Review,

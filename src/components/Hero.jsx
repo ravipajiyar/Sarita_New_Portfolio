@@ -154,6 +154,8 @@ const Hero = () => {
                 >
                   View Projects
                 </motion.a>
+                {/* Download CV - Commented out for now */}
+                {/*
                 <motion.a 
                   href="/src/assets/sarita_cv.pdf" 
                   download 
@@ -166,6 +168,7 @@ const Hero = () => {
                 >
                   Download CV
                 </motion.a>
+                */}
                 <motion.button
                   onClick={() => setShowLicenseModal(true)}
                   whileHover={{ 

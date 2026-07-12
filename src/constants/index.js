@@ -62,6 +62,7 @@ import {
   Finalyear_Report,
   Shyam,
   ramesh,
+  sumit,
   trishuli_report,
   rum_report,
   Literature_Review,
@@ -310,9 +311,10 @@ const experiences = [
     date: "2024 - 2025",
     points: [
       "Potential Study of Medium Hydropower Project of Nepal: A Case Study of Kabeli-A HEP.",
-      "Conducted under the supervision of Dr. Shyam Sundar Khadka, analyzing the hydrological, hydraulic, and structural components of the Kabeli-A Hydroelectric Project.",
+      "Analyzed the hydrological, hydraulic, and structural components of the Kabeli-A Hydroelectric Project.",
       "Evaluated economic feasibility to optimize power generation potential.",
       "Prepared detailed technical report covering feasibility analysis, design parameters, and project recommendations.",
+      "Conducted under the supervision of Dr. Shyam Sundar Khadka.",
     ],
   },
   {
@@ -329,7 +331,7 @@ const experiences = [
     ],
   },
   {
-    title: "Junior Civil Engineer",
+    title: "Civil Engineer",
     company_name: "Sanima Hydro and Engineering Pvt. Ltd",
     icon: building,
     iconBg: "#E6DEDD",
@@ -437,11 +439,11 @@ const testimonials = [
     image: Shyam,
   },
   {
-    testimonial: "Sarita's dedication and technical expertise in construction analysis and quality assurance have been valuable contributions to our project workflows.",
+    testimonial: "Sarita demonstrated strong technical skills during her internship at Kabeli-A Hydropower Project, contributing effectively to quality checks, concrete testing, and project documentation.",
     name: "Sumit Thapa",
     designation: "Project Manager",
     company: "Kabeli-A Hydropower",
-    image: Shyam,
+    image: sumit,
   },
 ];
 
