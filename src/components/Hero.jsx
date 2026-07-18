@@ -1,14 +1,11 @@
 import { motion } from "framer-motion";
 import { styles } from "../styles";
 import { CivilCanvas } from "./canvas";
-import sarruImage from '../assets/sarru.jpeg';
-import TypewriterEffect from './TypewriterEffect';
-import { lazy, Suspense, useState } from 'react';
-import {
-  FaGithub,
-  FaLinkedin,
-  FaTwitter,
-} from "react-icons/fa";
+import sarruImage from "../assets/sarru.jpeg";
+import licenseImage from "../assets/liscense.jpeg";
+import TypewriterEffect from "./TypewriterEffect";
+import { lazy, Suspense, useState } from "react";
+import { FaGithub, FaLinkedin, FaTwitter } from "react-icons/fa";
 
 const Hero = () => {
   const [showLicenseModal, setShowLicenseModal] = useState(false);
@@ -34,7 +31,9 @@ const Hero = () => {
             className="bg-[#1a1a2e] rounded-2xl p-4 sm:p-8 max-w-2xl w-full max-h-[90vh] overflow-auto"
           >
             <div className="flex justify-between items-center mb-4">
-              <h2 className="text-2xl font-bold text-white">Professional License</h2>
+              <h2 className="text-2xl font-bold text-white">
+                Professional License
+              </h2>
               <button
                 onClick={() => setShowLicenseModal(false)}
                 className="text-gray-400 hover:text-white text-2xl"
@@ -43,7 +42,7 @@ const Hero = () => {
               </button>
             </div>
             <img
-              src="/src/assets/liscense.jpeg"
+              src={licenseImage}
               alt="Civil Engineer License"
               className="w-full rounded-lg"
             />
@@ -54,7 +53,6 @@ const Hero = () => {
       {/* Main Content Container with proper padding */}
       <div className="relative z-10 h-full px-4 sm:px-6 lg:px-20 xl:px-24 pt-16 sm:pt-20 pb-6 sm:pb-8">
         <div className="max-w-7xl mx-auto h-full flex items-center">
-          
           {/* Profile Image - Top Right with better positioning */}
           <motion.div
             initial={{ opacity: 0, scale: 0.5, y: -20 }}
@@ -62,8 +60,8 @@ const Hero = () => {
             transition={{ duration: 1, delay: 0.2 }}
             className="absolute top-16 sm:top-24 lg:top-32 right-4 sm:right-12 lg:right-20 xl:right-24 w-[80px] h-[80px] sm:w-[120px] sm:h-[120px] lg:w-[140px] lg:h-[140px] xl:w-[160px] xl:h-[160px] rounded-full overflow-hidden border-2 sm:border-4 border-[#915EFF] shadow-2xl z-30 bg-[#181829]"
           >
-            <img 
-              src={sarruImage} 
+            <img
+              src={sarruImage}
               alt="Sarita Sapkota"
               className="w-full h-full object-cover"
             />
@@ -80,11 +78,11 @@ const Hero = () => {
                 initial={{ opacity: 0, x: 20 }}
                 animate={{ opacity: 1, x: 0 }}
                 transition={{ duration: 0.5, delay: 0.8 + index * 0.1 }}
-                whileHover={{ 
-                  scale: 1.3, 
+                whileHover={{
+                  scale: 1.3,
                   y: -3,
                   rotate: [0, -10, 10, 0],
-                  transition: { duration: 0.3 }
+                  transition: { duration: 0.3 },
                 }}
                 whileTap={{ scale: 0.9 }}
                 className="w-10 h-10 sm:w-12 sm:h-12 bg-[#1a1a2e] backdrop-blur-sm bg-opacity-80 rounded-full flex items-center justify-center text-white hover:text-[#915EFF] hover:bg-[#915EFF] hover:bg-opacity-20 transition-all duration-300 border border-[#915EFF] border-opacity-30"
@@ -96,7 +94,6 @@ const Hero = () => {
 
           {/* Main Content Layout - Improved responsive grid */}
           <div className="w-full min-h-screen sm:h-full flex flex-col lg:flex-row items-center justify-between gap-6 sm:gap-8 lg:gap-12 py-16 sm:py-0">
-            
             {/* Left Side - Text Content */}
             <motion.div
               initial={{ opacity: 0, x: -50 }}
@@ -107,12 +104,12 @@ const Hero = () => {
               {/* Greeting with animated underline */}
               <div className="relative mb-1 sm:mb-2 lg:mb-4">
                 <h1 className="text-[22px] sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold text-white leading-tight">
-                  Hi, I'm{' '}
+                  Hi, I'm{" "}
                   <span className="relative text-[#915EFF]">
                     Sarita.S
                     <motion.div
                       initial={{ width: 0 }}
-                      animate={{ width: '100%' }}
+                      animate={{ width: "100%" }}
                       transition={{ duration: 0.8, delay: 1 }}
                       className="absolute bottom-0 left-0 h-1 bg-gradient-to-r from-[#915EFF] to-[#7a3ee6] rounded"
                     />
@@ -122,32 +119,39 @@ const Hero = () => {
 
               {/* Professional Title with Typewriter */}
               <div className="text-[#dfd9ff] font-medium text-base sm:text-xl md:text-2xl lg:text-3xl leading-tight mb-2 sm:mb-4 lg:mb-6">
-                I'm a{' '}
-                <TypewriterEffect textToType="Licensed Civil Engineer" />
+                I'm a <TypewriterEffect textToType="Licensed Civil Engineer" />
               </div>
 
               {/* Description with better spacing */}
-              <motion.p 
+              <motion.p
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.8, delay: 0.6 }}
                 className="text-secondary text-[11px] sm:text-sm md:text-base lg:text-lg xl:text-xl leading-relaxed mb-4 sm:mb-6 lg:mb-8 px-1 sm:px-2 lg:px-0"
               >
-                A licensed Civil Engineer and Kathmandu University graduate specializing in Hydropower, with a strong focus on structural engineering, water resources, and infrastructure assessment. Experienced in hydropower design, hydraulic modeling, geospatial analysis, and structural analysis, with an interest in applying data-driven approaches to infrastructure monitoring - committed to resilient, sustainable infrastructure.
+                Civil Engineering graduate from Kathmandu University with
+                hands-on experience across hydraulic modeling, structural
+                monitoring, and geospatial analysis, including hydropower
+                structural design and assessment work. Ongoing research applies
+                deep learning to structural crack detection in concrete, with an
+                increasing focus on data-driven approaches to structural
+                condition assessment - bridging traditional civil engineering
+                practice with modern analytical methods. Committed to resilient,
+                sustainable infrastructure.
               </motion.p>
 
               {/* Call-to-Action Buttons */}
-              <motion.div 
+              <motion.div
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.8, delay: 0.8 }}
                 className="flex flex-col sm:flex-row gap-2 sm:gap-3 lg:gap-4 flex-wrap"
               >
-                <motion.a 
-                  href="#works" 
-                  whileHover={{ 
+                <motion.a
+                  href="#works"
+                  whileHover={{
                     scale: 1.05,
-                    boxShadow: "0 10px 30px rgba(145, 94, 255, 0.4)"
+                    boxShadow: "0 10px 30px rgba(145, 94, 255, 0.4)",
                   }}
                   whileTap={{ scale: 0.95 }}
                   className="bg-gradient-to-r from-[#915EFF] to-[#7a3ee6] text-white px-5 sm:px-8 py-2 sm:py-3 rounded-full font-semibold shadow-lg hover:shadow-xl transition-all duration-300 text-center text-xs sm:text-base"
@@ -171,23 +175,23 @@ const Hero = () => {
                 */}
                 <motion.button
                   onClick={() => setShowLicenseModal(true)}
-                  whileHover={{ 
+                  whileHover={{
                     scale: 1.05,
-                    backgroundColor: "rgba(100, 255, 218, 0.2)"
+                    backgroundColor: "rgba(100, 255, 218, 0.2)",
                   }}
                   whileTap={{ scale: 0.95 }}
                   className="border-2 border-[#64ffda] text-[#64ffda] px-5 sm:px-8 py-2 sm:py-3 rounded-full font-semibold shadow-lg hover:bg-[#64ffda] hover:text-[#0a192f] transition-all duration-300 text-center backdrop-blur-sm text-xs sm:text-base"
                 >
                   View License
                 </motion.button>
-                <motion.button 
+                <motion.button
                   onClick={() => {
                     const element = document.querySelector("#hireme");
                     element?.scrollIntoView({ behavior: "smooth" });
                   }}
-                  whileHover={{ 
+                  whileHover={{
                     scale: 1.05,
-                    boxShadow: "0 10px 30px rgba(100, 255, 218, 0.4)"
+                    boxShadow: "0 10px 30px rgba(100, 255, 218, 0.4)",
                   }}
                   whileTap={{ scale: 0.95 }}
                   className="bg-gradient-to-r from-[#64ffda] to-[#4fd8b8] text-[#0a192f] px-5 sm:px-8 py-2 sm:py-3 rounded-full font-semibold shadow-lg hover:shadow-xl transition-all duration-300 text-center text-xs sm:text-base"
@@ -198,7 +202,7 @@ const Hero = () => {
             </motion.div>
 
             {/* Right Side - 3D Canvas */}
-            <motion.div 
+            <motion.div
               initial={{ opacity: 0, scale: 0.8 }}
               animate={{ opacity: 1, scale: 1 }}
               transition={{ duration: 1, delay: 0.5 }}
@@ -214,7 +218,7 @@ const Hero = () => {
       </div>
 
       {/* Scroll Indicator with enhanced design */}
-      <motion.div 
+      <motion.div
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 1, delay: 1.2 }}

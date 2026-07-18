@@ -1,4 +1,4 @@
-import { BrowserRouter } from "react-router-dom";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { Suspense, lazy, useState, useEffect } from "react";
 import { Navbar, Hero } from "./components";
 import React from "react";
@@ -52,6 +52,7 @@ const HireMe = lazy(() => import("./components/Hireme"));
 const Feedbacks = lazy(() => import("./components/Feedbacks"));
 const Contact = lazy(() => import("./components/Contact"));
 const ChatBot = lazy(() => import("./components/ChatBot"));
+const ProjectDetail = lazy(() => import("./components/ProjectDetail"));
 
 // Improved loading screen
 const LoadingScreen = () => (
@@ -80,35 +81,50 @@ const App = () => {
   return (
     <ErrorBoundary>
       <BrowserRouter>
-        <div className='relative z-0 bg-primary'>
-          <StarsCanvas />
-          <div className='relative'>
-            <Navbar />
-            <ErrorBoundary>
-              <Hero />
-            </ErrorBoundary>
-          </div>
-          
-          <ErrorBoundary>
-            <Suspense fallback={<LoadingScreen />}>
-              <div className='relative z-0'>
-                <About />
-                <Experience />
-                <Tech />
-                <Works />
-                <Graduation />
-                {/* <MUrCS /> */}
-                <Certificates />
-                <HireMe />
-                <Feedbacks />
-                <div className="relative z-0">
-                  <Contact />
+        <Routes>
+          <Route
+            path="/"
+            element={
+              <div className='relative z-0 bg-primary'>
+                <StarsCanvas />
+                <div className='relative'>
+                  <Navbar />
+                  <ErrorBoundary>
+                    <Hero />
+                  </ErrorBoundary>
                 </div>
+                
+                <ErrorBoundary>
+                  <Suspense fallback={<LoadingScreen />}>
+                    <div className='relative z-0'>
+                      <About />
+                      <Experience />
+                      <Tech />
+                      <Works />
+                      {/* <Graduation /> */}
+                      {/* <MUrCS /> */}
+                      <Certificates />
+                      <HireMe />
+                      <Feedbacks />
+                      <div className="relative z-0">
+                        <Contact />
+                      </div>
+                    </div>
+                    <ChatBot />
+                  </Suspense>
+                </ErrorBoundary>
               </div>
-              <ChatBot />
-            </Suspense>
-          </ErrorBoundary>
-        </div>
+            }
+          />
+          <Route
+            path="/projects/:slug"
+            element={
+              <Suspense fallback={<LoadingScreen />}>
+                <ProjectDetail />
+              </Suspense>
+            }
+          />
+        </Routes>
       </BrowserRouter>
     </ErrorBoundary>
   );

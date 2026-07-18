@@ -69,6 +69,18 @@ import {
   Methodological_Framework,
   Data_Supporting_Material,
   Urban_Hydrological_Nepal_Europe,
+  crackImage1,
+  crackImage2,
+  crackImage3,
+  crackImage4,
+  crackImage5,
+  crackImage6,
+  crackAnalysis,
+  hairlineCrack,
+  crackImages,
+  crackAbstract,
+  crackRoleSummary,
+  crackSiteLocation,
 } from "../assets";
 
 export const navLinks = [
@@ -121,8 +133,8 @@ const services = [
     icon: survey,
   },
   {
-    title: "Project Management",
-    icon: project,
+    title: "Concrete Technology & Testing",
+    icon: brickwall,
   },
 ];
 
@@ -164,16 +176,16 @@ const technologies = [
     icon: gis,
   },
   {
-    name: "Project Libre",
-    icon: project,
+    name: "Concrete Tech & Testing",
+    icon: brickwall,
   },
   {
-    name: "Microsoft Office",
+    name: "MS Office",
     icon: web,
   },
   {
-    name: "Canva",
-    icon: design,
+    name: "Concrete Analysis",
+    icon: brickwall,
   },
 ];
 
@@ -814,4 +826,181 @@ export const murcsProject = {
   ],
 };
 
-export { services, technologies, experiences, testimonials, projects, certificates };
+const projectDetails = {
+  crackformer: {
+    title: "CrackFormer",
+    subtitle: "Multi-Scale CNN-Transformer Hybrid Model for Hairline Crack Detection",
+    tagline: "A hybrid deep learning framework for detecting hairline cracks (<0.3mm) in concrete structures for structural health monitoring",
+    status: "Ongoing",
+    statusDetail: "Manuscript in preparation for journal submission",
+    domain: "Structural Health Monitoring / AI in Civil Engineering",
+    institution: "Kathmandu University",
+    duration: "2025 - Present",
+    github: "https://github.com/saritasapkota123/A-Multi-Scale-Deep-Learning-Approach-for-Hairline-Crack-Detection-using-a-Hybrid-CNN-Transformer",
+    sections: [
+      {
+        title: "Overview",
+        content: "Detecting hairline cracks, often less than 0.3mm wide, is a critical but difficult task in structural health monitoring. These cracks are faint, easily lost in surface noise, and hard to segment accurately. CrackFormer addresses this by combining a multi-scale CNN, which captures fine local detail, with a Swin Transformer, which models overall crack continuity even when broken or faint. Attention gates help the model focus on crack features while suppressing background noise.",
+      },
+      {
+        title: "My Role",
+        content: "Civil Engineering Lead / First Author. Bridged civil engineering principles and AI modeling — ensured the model's design, data, and outputs were grounded in real structural inspection practice rather than computational metrics alone.",
+        bullets: [
+          "Conceptualized the research problem and scope from a civil engineering standpoint",
+          "Directed field data collection of 1,200 crack images across concrete structures in Nepal",
+          "Conducted the literature review of traditional and AI-based crack detection methods",
+          "Designed the engineering validation framework linking model outputs to crack morphology, width, and propagation behavior",
+          "Verified predicted crack widths against field measurements within tolerance",
+          "Interpreted results for field-level reliability and real-world deployment potential",
+          "Authored Introduction, Literature Review, civil-engineering Methodology sections, and Discussion",
+        ],
+      },
+      {
+        title: "Objectives",
+        bullets: [
+          "Combine local precision (CNN) and global context (Transformer) in one hybrid model",
+          "Achieve reliable detection of hairline cracks under 0.3mm",
+          "Validate detections against real field crack geometry, not just pixel-level metrics",
+          "Demonstrate crack-growth tracking over time for practical infrastructure monitoring",
+        ],
+      },
+      {
+        title: "Methodology / Architecture",
+        bullets: [
+          "Multi-scale CNN branch: extracts fine-grained local crack texture and boundary detail",
+          "Swin Transformer branch: models long-range spatial dependencies to reconstruct broken/discontinuous cracks",
+          "Attention gates: fuse CNN + Transformer features, suppress background noise (shadows, staining, surface texture)",
+        ],
+      },
+      {
+        title: "Dataset",
+        bullets: [
+          "SDNET2018 (public benchmark)",
+          "DeepCrack (public pixel-level segmentation dataset)",
+          "1,200 original field images collected from concrete structures in Nepal",
+        ],
+      },
+    ],
+    metrics: [
+      { label: "IoU", value: "85.4%" },
+      { label: "F1-score", value: "92.1%" },
+      { label: "Improvement over U-Net / TransUNet", value: "3-5%" },
+    ],
+    tools: ["Python", "CNN", "Swin Transformer", "Attention Mechanisms", "PyTorch / TensorFlow"],
+    team: [
+      { name: "Sarita Sapkota", role: "Civil Engineering (First Author)" },
+      { name: "Ravi Kumar Pajiyar", role: "Computer Science & Engineering" },
+      { name: "Prof. Dr. Sudan Jha", role: "Supervisor, CSE, Kathmandu University" },
+    ],
+    links: [
+      { label: "GitHub Repository", url: "https://github.com/saritasapkota123/A-Multi-Scale-Deep-Learning-Approach-for-Hairline-Crack-Detection-using-a-Hybrid-CNN-Transformer" },
+      { label: "Paper", url: null, note: "Manuscript in preparation (link to be added upon publication)" },
+    ],
+    images: [
+      { src: hairlineCrack, caption: "Hairline crack on concrete surface" },
+      { src: crackImage1, caption: "Field crack specimen" },
+      { src: crackImage2, caption: "Crack width measurement" },
+      { src: crackAnalysis, caption: "Crack analysis visualization" },
+      { src: crackImage3, caption: "Concrete structure inspection" },
+      { src: crackImage4, caption: "Crack propagation pattern" },
+      { src: crackImage5, caption: "Field data collection" },
+      { src: crackImage6, caption: "Crack segmentation output" },
+      { src: crackImages, caption: "Crack image dataset samples" },
+    ],
+    documents: [
+      { name: "Abstract & Introduction", file: crackAbstract },
+      { name: "Role Summary in the Manuscript", file: crackRoleSummary },
+      { name: "Site Location", file: crackSiteLocation },
+    ],
+  },
+  "kabeli-a-hep": {
+    title: "Potential Study of Medium Hydropower Project of Nepal",
+    subtitle: "A Case Study of Kabeli-A HEP",
+    tagline: "Field- and desk-based hydrological, hydraulic, and financial feasibility study of a 49.49 MW run-of-river hydropower project",
+    status: "Completed",
+    statusDetail: "Submitted July 2025",
+    domain: "Hydropower Engineering",
+    institution: "Kathmandu University, Department of Civil Engineering",
+    duration: "Apr 2025 - Jul 2025",
+    site: "Panchthar/Taplejung District, Nepal (27°13'41\"-27°17'32\"N, 87°40'55\"-87°45'50\"E)",
+    github: null,
+    report: true,
+    sections: [
+      {
+        title: "Overview",
+        content: "Kabeli-A HEP is a run-of-river development on the Kabeli River, developed by Kabeli Energy Limited (KEL). This project evaluated the plant's potential end-to-end: two headworks layout alternatives were compared on technical, economic, and environmental grounds, and the more viable one was carried through detailed hydrological analysis, hydraulic design, tunnel modelling, and financial feasibility assessment.",
+      },
+      {
+        title: "My Role",
+        content: "Team Member, Group 11 (5-member final-year team)",
+        bullets: [
+          "Contributed to hydrological analysis and design discharge determination",
+          "Participated in hydraulic design of civil structures (headworks, tunnel, penstock, powerhouse)",
+          "Contributed to stability analysis and quantity/cost estimation",
+          "Co-authored the final technical report covering feasibility analysis, design parameters, and recommendations",
+        ],
+      },
+      {
+        title: "Objectives",
+        content: "Primary: Conduct a potential study of a medium hydropower project in Nepal using Kabeli-A HEP as the case study.",
+        bullets: [
+          "Identify suitable locations for hydropower components using topographic maps",
+          "Conduct hydrological analysis to determine design discharge and design parameters",
+          "Design key civil structures: intake, weir, approach canal, settling basin, headrace tunnel, surge shaft, penstock, powerhouse",
+          "Perform stability analysis of major civil components",
+          "Estimate quantities and costs for construction",
+          "Carry out financial analysis using BCR and IRR",
+        ],
+      },
+      {
+        title: "Methodology",
+        content: "Desk study & consultation → Data collection (DHM, Kabeli Energy Ltd.) → Layout of hydropower components → Hydrological analysis (FDC, Gumbel & Log Pearson Type III flood analysis) → Hydraulic design (per DOED guidelines & IS codes) → Stability analysis → Estimation & costing → Financial analysis (B/C, IRR, NPV, sensitivity)",
+      },
+    ],
+    metrics: [
+      { label: "Gross Head", value: "124.45 m" },
+      { label: "Net Head", value: "120.14 m" },
+      { label: "Power Production", value: "49.49 MW" },
+      { label: "Design Discharge (Q40)", value: "48.83 m³/s" },
+      { label: "Catchment Area (Intake)", value: "861.87 km²" },
+      { label: "Headrace Tunnel", value: "Inverted D, 4.8m dia., 5.09km long" },
+      { label: "Penstock", value: "3.65m dia., 301.38m long" },
+      { label: "Turbines", value: "3 × Vertical Francis, 16.49 MW each" },
+      { label: "Total Project Cost", value: "NRs. 7,25,33,38,034" },
+      { label: "B/C Ratio", value: "2.27" },
+      { label: "IRR", value: "15%" },
+      { label: "Payback Period", value: "6 years" },
+    ],
+    tools: ["HEC-RAS", "Phase2", "ETABS", "AutoCAD", "DOED Guidelines (2018)", "IS 456:2000", "IS 4880", "IS 6966-1", "IS 800:2007", "IS 12800", "NBC 105:2020"],
+    conclusions: [
+      "Hydropower potential of Kabeli-A HEP is 49.49 MW, with Q40 of 48.83 m³/s and net head of 120.14 m",
+      "Alternative I layout found technically more feasible, economically more viable, and environmentally more sustainable",
+      "Optimized headrace tunnel and pressure shaft diameters: 4.8m and 3.65m, with support systems designed across rock classes II-VI",
+      "B/C ratio of 2.27 (>1) confirms the project is economically feasible",
+    ],
+    team: [
+      { name: "Bikesh Mainali", role: "028062-20" },
+      { name: "Trishna Prajapati", role: "028074-20" },
+      { name: "Swapnil Regmi", role: "028078-20" },
+      { name: "Sarita Sapkota", role: "028084-20" },
+      { name: "Sandesh Shrestha", role: "028090-20" },
+    ],
+    supervisors: [
+      { name: "Associate Prof. Dr. Shyam Sundar Khadka", role: "Project Supervisor" },
+      { name: "Assistant Prof. Er. Suman Shrestha", role: "Project Coordinator" },
+      { name: "Er. Sumit Thapa", role: "Technical Support, Project Manager, Kabeli-A HEP" },
+    ],
+    links: [
+      { label: "Report", url: null, note: "Final submitted report PDF" },
+      { label: "GitHub", url: null, note: "N/A (report-based thesis)" },
+    ],
+    images: [
+      { src: finalcover, caption: "Kabeli-A HEP Report Cover" },
+    ],
+    documents: [
+      { name: "Final Year Report", file: Finalyear_Report },
+    ],
+  },
+};
+
+export { services, technologies, experiences, testimonials, projects, certificates, projectDetails };

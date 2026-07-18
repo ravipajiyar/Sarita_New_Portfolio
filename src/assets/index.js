@@ -76,6 +76,20 @@ import marsnepalsurvey from "./marsnepalsurvey.pdf";
 import isolated_footings from "./isolated_footings.pdf";
 import Urban_Hydrological_Nepal_Europe from "./Urban_Hydrological_Nepal_Europe.pdf";
 
+import crackImage1 from "./research-images/crack image.jpeg";
+import crackImage2 from "./research-images/crack image .jpg";
+import crackImage3 from "./research-images/crack image3.jpg";
+import crackImage4 from "./research-images/crack image 4.jpeg";
+import crackImage5 from "./research-images/crack image5.jpeg";
+import crackImage6 from "./research-images/crackimage6.jpeg";
+import crackAnalysis from "./research-images/crack analysis image .jpeg";
+import hairlineCrack from "./research-images/Hairline crack image.jpg";
+import crackImages from "./research-images/crack images.jpg";
+
+import crackAbstract from "./reserach-document/Abstract_and_Introduction.pdf";
+import crackRoleSummary from "./reserach-document/Role Summary in the Manuscript of the Paper.pdf";
+import crackSiteLocation from "./reserach-document/Site location .pdf";
+
 export {
   logo,
   backend,
@@ -152,4 +166,16 @@ export {
   Methodological_Framework,
   Data_Supporting_Material,
   Urban_Hydrological_Nepal_Europe,
+  crackImage1,
+  crackImage2,
+  crackImage3,
+  crackImage4,
+  crackImage5,
+  crackImage6,
+  crackAnalysis,
+  hairlineCrack,
+  crackImages,
+  crackAbstract,
+  crackRoleSummary,
+  crackSiteLocation,
 };
