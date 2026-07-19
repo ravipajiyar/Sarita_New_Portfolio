@@ -1,5 +1,5 @@
 import React, { useEffect } from "react";
-import { useParams, useNavigate } from "react-router-dom";
+import { useParams, useNavigate, useLocation } from "react-router-dom";
 import { motion } from "framer-motion";
 import { FaArrowLeft, FaGithub, FaExternalLinkAlt, FaDownload, FaImage } from "react-icons/fa";
 import { projectDetails } from "../constants";
@@ -18,10 +18,22 @@ const stagger = {
 const ProjectDetail = () => {
   const { slug } = useParams();
   const navigate = useNavigate();
+  const location = useLocation();
 
   useEffect(() => {
     window.scrollTo(0, 0);
   }, [slug]);
+
+  const handleBack = () => {
+    if (location.state?.from) {
+      navigate("/");
+      setTimeout(() => {
+        document.querySelector("#work")?.scrollIntoView({ behavior: "smooth" });
+      }, 100);
+    } else {
+      navigate(-1);
+    }
+  };
   const project = projectDetails[slug];
 
   if (!project) {
@@ -48,7 +60,7 @@ const ProjectDetail = () => {
         <motion.button
           initial={{ opacity: 0, x: -20 }}
           animate={{ opacity: 1, x: 0 }}
-          onClick={() => navigate(-1)}
+          onClick={handleBack}
           className="flex items-center gap-2 text-secondary hover:text-white transition-colors mb-10 text-sm sm:text-base"
         >
           <FaArrowLeft /> Back

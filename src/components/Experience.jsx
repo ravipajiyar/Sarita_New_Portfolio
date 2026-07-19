@@ -216,7 +216,7 @@ const Experience = () => {
                 <ResearchCard
                   experience={researchExperiences[0]}
                   position="left"
-                  onClick={() => navigate(`/projects/${researchProjectLinks[researchExperiences[0].title]}`)}
+                  onClick={() => navigate(`/projects/${researchProjectLinks[researchExperiences[0].title]}`, { state: { from: "/#work" } })}
                 />
               )}
 
@@ -225,7 +225,7 @@ const Experience = () => {
                 <ResearchCard
                   experience={researchExperiences[1]}
                   position="right"
-                  onClick={() => navigate(`/projects/${researchProjectLinks[researchExperiences[1].title]}`)}
+                  onClick={() => navigate(`/projects/${researchProjectLinks[researchExperiences[1].title]}`, { state: { from: "/#work" } })}
                 />
               )}
             </>

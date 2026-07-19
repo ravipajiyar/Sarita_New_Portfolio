@@ -21,7 +21,7 @@ const ChatBot = () => {
 
     // Experience related queries
     if (message.includes('experience') || message.includes('work')) {
-      return "Sarita has diverse experience including: \n1. Research in SHM at Kathmandu University (Apr-Jul 2025)\n2. Internship at TODA Corporation, Japan (Jun-Aug 2025)\n3. Internship at Kabeli A Hydropower Project (Feb-Apr 2025)\n4. Media Head at KU Youth Red Cross Circle (Nov 2024-Apr 2025)";
+      return "Sarita has diverse experience including: \n1. Research in SHM at Kathmandu University (Aug 2025-Present)\n2. Internship at TODA Corporation, Japan (Jun-Aug 2025)\n3. Internship at Kabeli A Hydropower Project (Feb-Apr 2025)\n4. Media Head at KU Youth Red Cross Circle (Nov 2024-Apr 2025)";
     }
 
     // Skills related queries

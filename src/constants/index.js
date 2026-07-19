@@ -5,7 +5,7 @@ import {
   web,
   surveying,
   autocad,
-  brickwall,
+  concrete,
   design,
   analysis,
   survey,
@@ -78,6 +78,7 @@ import {
   crackAnalysis,
   hairlineCrack,
   crackImages,
+  FinalEngineeringDrawings,
   crackAbstract,
   crackRoleSummary,
   crackSiteLocation,
@@ -134,7 +135,7 @@ const services = [
   },
   {
     title: "Concrete Technology & Testing",
-    icon: brickwall,
+    icon: concrete,
   },
 ];
 
@@ -177,7 +178,7 @@ const technologies = [
   },
   {
     name: "Concrete Tech & Testing",
-    icon: brickwall,
+    icon: concrete,
   },
   {
     name: "MS Office",
@@ -185,7 +186,7 @@ const technologies = [
   },
   {
     name: "Concrete Analysis",
-    icon: brickwall,
+    icon: concrete,
   },
 ];
 
@@ -307,7 +308,7 @@ const experiences = [
     company_name: "Kathmandu University",
     icon: analysis,
     iconBg: "#383E56",
-    date: "Apr 2025 - Jul 2025",
+    date: "Aug 2025 - Present",
     points: [
       "Led the civil engineering side of a multi-scale deep learning study for hairline crack detection, ensuring the research addressed real structural inspection and deterioration challenges.",
       "Designed the engineering validation framework, linking model outputs to crack morphology, width, and propagation behavior rather than relying on computational metrics alone.",
@@ -999,6 +1000,7 @@ const projectDetails = {
     ],
     documents: [
       { name: "Final Year Report", file: Finalyear_Report },
+      { name: "Final Engineering Drawings", file: FinalEngineeringDrawings },
     ],
   },
 };

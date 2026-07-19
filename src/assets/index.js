@@ -16,7 +16,7 @@ import punyamata from "./punyamata.jpeg";
 import footings from "./footings.jpeg";
 import trishuli from "./trishuli.jpg";
 import autocad from "./tech/autocad.png";
-import brickwall from "./tech/brickwall.png";
+import concrete from "./tech/concrete.jpeg";
 import bridge from "./tech/bridge.png";
 import building from "./tech/building.png";
 import construction from "./tech/construction.png";
@@ -86,6 +86,7 @@ import crackAnalysis from "./research-images/crack analysis image .jpeg";
 import hairlineCrack from "./research-images/Hairline crack image.jpg";
 import crackImages from "./research-images/crack images.jpg";
 
+import FinalEngineeringDrawings from "./FinalEngineering-Drawings.pdf";
 import crackAbstract from "./reserach-document/Abstract_and_Introduction.pdf";
 import crackRoleSummary from "./reserach-document/Role Summary in the Manuscript of the Paper.pdf";
 import crackSiteLocation from "./reserach-document/Site location .pdf";
@@ -94,7 +95,7 @@ export {
   logo,
   backend,
   autocad,
-  brickwall,
+  concrete,
   bridge,
   building,
   construction,
@@ -175,6 +176,7 @@ export {
   crackAnalysis,
   hairlineCrack,
   crackImages,
+  FinalEngineeringDrawings,
   crackAbstract,
   crackRoleSummary,
   crackSiteLocation,
